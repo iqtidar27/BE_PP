@@ -454,17 +454,33 @@ class TupleExtractor:
         self, verb: Token, entity_spans: List[EntitySpan]
     ) -> List[EntitySpan]:
         related: List[EntitySpan] = []
+
+        # Resolve main verb (aux / auxpass)
         main_verb = verb
         if verb.dep_ in ("aux", "auxpass") and verb.head.pos_ == "VERB":
             main_verb = verb.head
 
+        # A4: coordinated verb (conj) inherits subjects from its head verb
+        subj_source = main_verb
+        if main_verb.dep_ == "conj" and main_verb.head.pos_ == "VERB":
+            subj_source = main_verb.head
+
         subject_tokens = set()
-        for child in main_verb.children:
+        for child in subj_source.children:
             if child.dep_ in ("nsubj", "nsubjpass"):
                 subject_tokens.update(child.subtree)
             elif child.dep_ == "agent":
                 for g in child.children:
                     subject_tokens.update(g.subtree)
+
+        # Also take subjects directly on main_verb if different from subj_source
+        if subj_source is not main_verb:
+            for child in main_verb.children:
+                if child.dep_ in ("nsubj", "nsubjpass"):
+                    subject_tokens.update(child.subtree)
+                elif child.dep_ == "agent":
+                    for g in child.children:
+                        subject_tokens.update(g.subtree)
 
         for span in entity_spans:
             if any(t in subject_tokens for t in span.tokens):
