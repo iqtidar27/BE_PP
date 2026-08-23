@@ -22,7 +22,7 @@ import spacy
 from spacy.matcher import PhraseMatcher
 from spacy.tokens import Doc, Token
 
-from entitiy_list import FIRST_PARTY, THIRD_PARTY
+from CUS.entity_list import FIRST_PARTY, THIRD_PARTY
 
 from pathlib import Path
 import sys
@@ -32,7 +32,7 @@ if str(_SRC_DIR) not in sys.path:
     sys.path.insert(0, str(_SRC_DIR))
 
 from NER_detection.inference_ner import DataObjectNER
-from soc_verbs import (
+from CUS.soc_verbs import (
     COLLECT_VERBS,
     MULTI_WORD_COLLECT,
     MULTI_WORD_SHARE,
@@ -195,18 +195,18 @@ class EntityRecognizer:
                 )
                 seen.update(t.i for t in tokens)
 
-        # B. First-party multi-word (longer phrases first)
-        first_party_multi = sorted(
-            [p for p in self.first_party if " " in p],
-            key=lambda x: len(x.split()),
-            reverse=True,
-        )
+        # B. First-party multi-word (prefer longer spans)
+        first_party_multi = [p for p in self.first_party if " " in p]
         if first_party_multi:
             matcher = PhraseMatcher(self.nlp.vocab, attr="LOWER")
             patterns = [self.nlp.make_doc(p) for p in first_party_multi]
             matcher.add("FIRST_PARTY_MWE", patterns)
 
-            for _, start, end in matcher(doc):
+            # Important: sort matches by length DESC so longer phrases win
+            raw_matches = list(matcher(doc))
+            raw_matches.sort(key=lambda m: (m[2] - m[1], -m[1]), reverse=True)
+
+            for _, start, end in raw_matches:
                 if any(i in seen for i in range(start, end)):
                     continue
                 span = doc[start:end]
