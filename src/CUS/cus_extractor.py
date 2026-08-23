@@ -238,6 +238,43 @@ class EntityRecognizer:
                 )
                 seen.add(token.i)
 
+        # D. Optional spaCy ORG/PERSON merge (unknown vendors only)
+        NOISE = {
+            "ip", "api", "sms", "url", "http", "https", "pdf", "id", "uid",
+            "pii", "gdpr", "ccpa", "cpu", "gpu", "os", "app", "web", "ai",
+            "sdk", "cdn", "dns", "ssl", "tls", "html", "css", "js",
+        }
+
+        for ent in doc.ents:
+            if ent.label_ not in {"ORG", "PERSON"}:
+                continue
+            tokens = list(ent)
+            if not tokens or any(t.i in seen for t in tokens):
+                continue
+
+            surface = ent.text.strip()
+            lower = surface.lower()
+
+            # Skip noise / already-known / too short
+            if lower in NOISE or lower in self.third_party or lower in self.first_party:
+                continue
+            if len(surface) < 3:
+                continue
+            # Prefer multi-word or capitalized single tokens
+            if len(tokens) == 1 and not tokens[0].text[:1].isupper():
+                continue
+
+            results.append(
+                EntitySpan(
+                    text=surface,
+                    text_normalized=lower,
+                    entity_type="third_party",
+                    tokens=tokens,
+                    root=ent.root,
+                )
+            )
+            seen.update(t.i for t in tokens)
+
         return results
 
 
