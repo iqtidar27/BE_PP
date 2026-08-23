@@ -371,6 +371,16 @@ class TupleExtractor:
             related_data = self._find_related_data(verb_token, data_spans)
             related_entities = self._find_related_entities(verb_token, entity_spans)
 
+            # A2: ignore secondary-clause verbs that only attach to weak pronouns
+            if verb_token.dep_ in {"advcl", "relcl"}:
+                related_entities = [
+                    e
+                    for e in related_entities
+                    if e.text_normalized not in {"you", "your", "my"}
+                ]
+                if not related_entities:
+                    continue
+
             if not related_data:
                 continue
 
@@ -468,7 +478,6 @@ class TupleExtractor:
 # ===========================================================================
 # 8. TupleFilter
 # ===========================================================================
-
 class TupleFilter:
     """
     Light post-filters:
@@ -477,7 +486,8 @@ class TupleFilter:
     """
 
     POSSESSIVE_PRONOUNS = {"your", "our", "my", "his", "her", "their"}
-    WEAK_PRONOUNS = {"you", "your", "our", "my", "we"}
+    # Only these are treated as weak secondary actors (not "we")
+    WEAK_SECONDARY = {"you", "your", "my"}
 
     def filter(self, tuples: List[CUSTuple]) -> List[CUSTuple]:
         if not tuples:
@@ -511,20 +521,25 @@ class TupleFilter:
         return cleaned
 
     def _is_weak_secondary(self, t: CUSTuple, all_tuples: List[CUSTuple]) -> bool:
-        if t.entity_normalized not in self.WEAK_PRONOUNS:
+        if t.entity_normalized not in self.WEAK_SECONDARY:
             return False
         for other in all_tuples:
             if other is t:
                 continue
             if other.data_object_normalized != t.data_object_normalized:
                 continue
+            # Stronger = third party, or first party that is not a weak secondary pronoun
+            if other.entity_type == "third_party":
+                return True
             if (
-                other.entity_type in {"third_party", "first_party"}
-                and other.entity_normalized not in self.WEAK_PRONOUNS
+                other.entity_type == "first_party"
+                and other.entity_normalized not in self.WEAK_SECONDARY
             ):
                 return True
+            if other.entity_type == "unknown" and other.entity_normalized == "unspecified":
+                # do not let unspecified suppress a weak secondary by itself
+                continue
         return False
-
 
 # ===========================================================================
 # 9. CUSExtractor (orchestrator)
