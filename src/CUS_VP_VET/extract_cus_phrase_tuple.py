@@ -1039,12 +1039,8 @@ class PolicyTransformer:
                     pstatement['entities'] = ['we_implicit']
 
             # Actor of a share/sell/disclose verb is sharing, not collecting.
+            # "with/to X" is the recipient, not a second actor.
             addPoliciesByEntities(agents, practice, pstatement['data_objects'], original_sentence, simplifiedStatements, actionLemma)
-            recipients = pstatement['entities'] or []
-            # Skip recipient row when it would duplicate the agent with the same label.
-            rec_only = [e for e in recipients if getAgentText(e) not in set(agents)] if recipients else []
-            if rec_only:
-                addPoliciesByEntities(rec_only, practice, pstatement['data_objects'], original_sentence, simplifiedStatements, actionLemma)
 
         def handleCollectVerb(pstatement, actionLemma, simplifiedStatements):
             agents = [getAgentText(a) for a in pstatement['agent']]
