@@ -1,0 +1,6107 @@
+{
+  "meta": {
+    "input": "/home/ayon/git/BE_PP/cus_clean_sentences.jsonl",
+    "ner_model": "/home/ayon/git/BE_PP/src/NER_detection/saved_model/dataobj_ner_v5_focal1.5_len256_unf6_dataset_version_v6_augmented_final",
+    "spacy_model": "en_core_web_sm",
+    "n_sentences": 288,
+    "n_pred_tuples": 342,
+    "n_sentences_with_no_pred": 98,
+    "seconds": 6.7
+  },
+  "results": [
+    {
+      "id": "re0001",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Our servers automatically record certain information such as IP addresses, browser types, and timestamps for analytical purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "our servers",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "record",
+          "negated": false
+        },
+        {
+          "entity": "our servers",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "browser types",
+          "verb": "record",
+          "negated": false
+        },
+        {
+          "entity": "our servers",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "timestamps",
+          "verb": "record",
+          "negated": false
+        },
+        {
+          "entity": "our servers",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "ip addresses",
+          "verb": "record",
+          "negated": false
+        }
+      ],
+      "n_pred": 4,
+      "error": null
+    },
+    {
+      "id": "re0002",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "No personal data is collected or shared unless required by law.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_share",
+          "data_object": "personal data",
+          "verb": "share",
+          "negated": true
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "personal data",
+          "verb": "collect",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0003",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We use cookies, including Google Analytics, to analyze user activity.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "user activity",
+          "verb": "analyze",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0004",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Some games may use Flash technology to store data.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "games",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "data",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0006",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These services may collect data if you are logged in to their platforms.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "data",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0008",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These advertisers may use cookies to provide tailored ads based on your browsing history.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "advertisers",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0009",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you contact us via email or contact form, we use your personal information solely to address your inquiry.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0010",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Your data is not sold or disclosed.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_share",
+          "data_object": "your data",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0011",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may track statistics like clicks on internal and external links to improve our site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "statistics",
+          "verb": "track",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0018",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "it will still record so you can always inspect last 2 minutes \\- squashed main menu logo to make room for default histogram location \\- rebuilt the select server by ping list to include ipv6 and server id, clicking on the ipv6 part fills in ipv6 otherwise ipv4 is used.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0019",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "while the servers are probed a progress bar indicates status in that button \\- when typing into the server ip address it quicksearches matching servers including server ids.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0040",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "While TMS is on all other keyboard shortcuts are ignored and the first key pressed is interpreted as the selector of the new target (0..9,A..Z) with the exception of backspace and will be shared to the team.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0048",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "It re-enables them again automatically if under 1K \\- added new online players window correlated with server side key owner from admin page: anti spies, intruders and fakes ### Privacy Policy: My servers log very basic information about each computer connecting to my site, such as IP address, device characteristics, and browser type as required to interact by web server software.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "my servers",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "very basic information about computer",
+          "verb": "log",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0049",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "None of this information is associated with any identified person at the time it is collected, but it could potentially be tied to you somehow if we are required to disclose our server logs as a result of a subpoena or other legal process.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "our server log",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0050",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The mod and webpages including team admin login at <https://ntl-slither.com/team> **_do not_** use cookies or any other technologies to track, collect or uniquely identify you or your device, but google analytics is used for reporting anonymous usage statistics in accordance with their terms (they process your data).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": true
+        },
+        {
+          "entity": "google analytic",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your data",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "they",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your data",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0051",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Login form uses strictly just authkeys/teamid and no personal data is ever asked, needed, associated nor collected and requiered anywhere for any services, not even an e-mail address.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "login form",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "authkey / teamid",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "personal data",
+          "verb": "collect",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0052",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "To be part of and share game data with the team (like any other online game or any internet resource for that matter), mod connects to my servers using the IP provided by your ISP or proxy/vpn, auth keys, nickname, score, chat message and so on.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "ip",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0053",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Current score, final scores, nicknames, auth keys, and IP address of player and of slither server (chat is not saved) are stored for up to one month in the team log from where the team owner can see the players accessing his team.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "current score",
+          "verb": "log",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "auth key",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "nickname",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "IP address of player",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "final score",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 5,
+      "error": null
+    },
+    {
+      "id": "re0054",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When log is displayed in browser, only the second least significant part of player's ip is displayed (for privacy reasons).",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0055",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Geoip data (that has max accuracy of city) is (re)computed using local database (maxmind.com) at the time of web log display.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0057",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Without a court order to your Internet Service Provider to force them to disclose to whom they had leased that ip address at the time in question, noone can use your ip address to identify you.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0058",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Ip addresses are requiered to be logged by law by all parties involved in a communication starting with your isp, midway carriers and final server that provides the services you access.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "ip addresses",
+          "verb": "log",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0059",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "IP address is regarded to be the equivalent of your car's license plates.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0061",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "In the case of team's log it should be enough and quite useful in order to spot keys used in different areas than they should.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0062",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Here is a screenshot of how entries look like in team log: By default (clean install) or if \"no team\" button selected, the mod does not attempt to connect for team membership therefore your game session is entirely anonymous **but if however you were part of a team and you were banned, as long as teamID and authkey fields have something filled in, the mod will try to validate them retrying each minute and you will appear in that team's log as red flagged (attempt of connection)**.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0080",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "kills: a dumb counter that keeps track of how many snakes hit your body and died.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0083",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Like many other Web sites, 7/24 Fun Games makes use of log files.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "7/24 fun games",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "log file",
+          "verb": "make use of",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0084",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These files merely logs visitors to the site – usually a standard procedure for hosting companies and a part of hosting services’s analytics.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0085",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The information inside the log files includes internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date/time stamp, referring/exit pages, and possibly the number of clicks.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0086",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This information is used to analyze trends, administer the site, track user’s movement around the site, and gather demographic information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "demographic information",
+          "verb": "gather",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0087",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "IP addresses, and other such information are not linked to any information that is personally identifiable.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0088",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "7/24 Fun Games uses cookies to store information about visitors’ preferences, to record user-specific information on which pages the site visitor accesses or visits, and to personalize or customize our web page content based upon visitors’ browser type or other information that the visitor sends via their browser.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "7/24 fun games",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information about visitor ’ preference",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "user-specific information",
+          "verb": "record",
+          "negated": false
+        },
+        {
+          "entity": "7/24 fun games",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0089",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Google, as a third party vendor, uses cookies to serve ads on 7/24 Fun Games.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0090",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Google’s use of the DART cookie enables it to serve ads to our site’s visitors based upon their visit to 7/24 Fun Games and other sites on the Internet.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0091",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Users may opt out of the use of the DART cookie by visiting the Google ad and content network privacy policy at the following URL – http://www.google.com/privacy_ads.html **Our Advertising Partners ** Some of our advertising partners may use cookies and web beacons on our site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "some of our advertising partners",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0093",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "They automatically receive your IP address when this occurs.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "they",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your ip addresses",
+          "verb": "receive",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0094",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Other technologies (such as cookies, JavaScript, or Web Beacons) may also be used by our site’s third-party ad networks to measure the effectiveness of their advertising campaigns and/or to personalize the advertising content that you see on the site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "other technology",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0095",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "You must obtain end users’ legally valid consent to: * the use of cookies or other local storage where legally required; and * the collection, sharing, and use of personal data for personalization of ads.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0096",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If personal data of end users of a third party property is shared with Google due to your use of, or integration with, a Google product, then you must use commercially reasonable efforts to ensure the operator of the third party property complies with the above duties.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "google",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "personal datum of end user of third party property",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0097",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Gestalt does not collect, store, or transmit any personal identification data or browsing history to any private servers.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "personal identification data",
+          "verb": "transmit",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0098",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "All prompt optimizations are processed locally within the extension or sent directly to the AI platforms you interact with (e.g., ChatGPT, Claude, Gemini).",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0101",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We value your privacy We use cookies to enhance your browsing experience, serve personalized ads or content, and analyze our traffic.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "our traffic",
+          "verb": "analyze",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0102",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Customize Accept All Customize Consent Preferences We use cookies to help you navigate efficiently and perform certain functions.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0103",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookies that are categorized as \"Necessary\" are stored on your browser as they are essential for enabling the basic functionalities of the site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0104",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Always Active Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0105",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These cookies do not store any personally identifiable data.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "cookies",
+          "verb": "store",
+          "negated": true
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "personally identifiable data",
+          "verb": "store",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0106",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookie stores and identifies a user's unique session ID to manage user sessions on the website.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0107",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookie is a session cookie and will be deleted when all the browser windows are closed.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0108",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This cookie is used for storing the visitor preference for the cookies in the information notice.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cooky in information notice",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0109",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Intercom sets this cookie that allows visitors to see any conversations they've had on Intercom websites.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "intercom",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0110",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This cookie enhances visitor browsing security by preventing cross-site request forgery.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0111",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This cookie, set by Cloudflare, is used to support Cloudflare Bot Management.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0112",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "CookieYes sets this cookie to remember users' consent preferences so that their preferences are respected on subsequent visits to this site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "CookieYes",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0113",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "It does not collect or store any personal information about the site visitors.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "it",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "personal information about site visitor",
+          "verb": "collect",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0114",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Stripe sets this cookie for fraud prevention purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "stripe",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0116",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Stripe sets this cookie to process payments.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "stripe",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0117",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "functional cookies",
+          "verb": "perform",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0118",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Linkedin set this cookie for storing visitor's consent regarding using cookies for non-essential purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0119",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "LinkedIn sets the lidc cookie to facilitate data center selection.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "linkedin",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "lidc cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0120",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "YouTube sets this cookie to store the user's video preferences using embedded YouTube videos.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0121",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookie ytidb::LAST_RESULT_ENTRY_KEY is used by YouTube to store the last search result entry that was clicked by the user.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookie ytidb::LAST_RESULT_ENTRY_KEY",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0123",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The yt-player-headers-readable cookie is used by YouTube to store user preferences related to video playback and interface, enhancing the user's viewing experience.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "user preference",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "yt-player-header-readable cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0124",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The yt-remote-session-app cookie is used by YouTube to store user preferences and information about the interface of the embedded YouTube video player.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "user preference",
+          "verb": "store",
+          "negated": false
+        },
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "yt-remote-session-app cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0125",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The yt-remote-cast-installed cookie is used to store the user's video player preferences using embedded YouTube video.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "yt-remote-cast-instal cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0126",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The yt-remote-session-name cookie is used by YouTube to store the user's video player preferences using embedded YouTube video.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "yt-remote-session-name cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0127",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The yt-remote-fast-check-period cookie is used by YouTube to store the user's video player preferences for embedded YouTube videos.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "yt-remote-fast-check-period cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0128",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Analytical cookies are used to understand how visitors interact with the website.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0129",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0130",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Google Tag Manager sets the cookie to experiment advertisement efficiency of websites using their services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "google tag manager",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        },
+        {
+          "entity": "their services",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0131",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Google Analytics sets this cookie to store and count page views.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "google analytics",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0132",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Google Analytics sets this cookie to calculate visitor, session and campaign data and track site usage for the site's analytics report.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0133",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookie stores information anonymously and assigns a randomly generated number to recognise unique visitors.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0134",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Mouseflow sets this cookie to identify whether a visitor is new or returning.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "mouseflow",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0135",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Performance Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0136",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "No cookies to display.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0137",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Advertisement cookies are used to provide visitors with customized advertisements based on the pages you visited previously and to analyze the effectiveness of the ad campaigns.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "advertisement cookies",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "advertisement cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0138",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "LinkedIn sets this cookie from LinkedIn share buttons and ad tags to recognize browser IDs.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "linkedin",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0139",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Youtube sets this cookie to track the views of embedded videos on Youtube pages.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0140",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "YouTube sets this cookie to measure bandwidth, determining whether the user gets the new or old player interface.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0141",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "YouTube sets this cookie to store the user's cookie consent state for the current domain.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        },
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "user's cookie consent state",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0142",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "YouTube sets this cookie to register a unique ID to store data on what videos from YouTube the user has seen.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "youtube",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "data",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0143",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "ClockAssist processes your personal data because you use our services and/or because you provide this data to us yourself.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "data",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "clockassist",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your personal data",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0144",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "ClockAssist processes your personal data for the following purposes: to provide you with the opportunity to create an account to track your behavior on the website in order to improve the website and tailor the offering of products and services to your preferences.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "clockassist",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your personal data",
+          "verb": "process",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "your personal data",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0145",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "ClockAssist does not sell your information to third parties and will only provide it if necessary for the execution of our agreement with you or to comply with a legal obligation.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "not_share",
+          "data_object": "your information",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0146",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "ClockAssist uses functional, analytical, and tracking cookies.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "clockassist",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "functional , analytical , and track cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0147",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "A cookie is a small text file that is stored in the browser of your computer, tablet, or smartphone when you first visit this website.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0148",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "ClockAssist uses cookies with purely technical functionality.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "clockassist",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0150",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These cookies are also used to make the website work properly and to optimize it.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0151",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "In addition, we place cookies that track your browsing behavior so that we can offer tailor-made content and advertisements.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "place",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0153",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you use the app, certain data you enter, such as text or interactions, may be sent to OpenAI for processing.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "text",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "openai",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "text",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "interaction",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "openai",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "interaction",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "openai",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "data",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "data",
+          "verb": "send",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0154",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "OpenAI uses this data to generate relevant AI suggestions, but we only process your data for the purposes of enhancing your user experience within the app.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your data",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0155",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Opens in a new window Opens an external website Opens an external website in a new window <!---->Close this consent banner<!----> This website utilizes technologies such as cookies to enable essential site functionality, as well as for analytics, personalization, and targeted advertising.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0156",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When using the App, you may consent to us collecting some of your personal information.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0158",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Upon installation, you will be explicitly asked to grant the App permission to access your device’s usage data and accessibility services (the “Device Services”).",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0159",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Using the Device Services, we collect non-personal ad and app-related information (“Services Data”) from your device.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "\" Services Data",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "non-personal ad and app-relate information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0160",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The non-personal Services Data we collect is designed to not include information that could uniquely identify you.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0161",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The App may run in the background on your device to collect aspects of the Collected Data.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "aspect of Collected Data",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0162",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Rather, the Services Data contains app and ad-related information including without limitation ads being displayed in your social media feeds and collect stats on which websites you visit, ad context, ad interactions, ad metadata, app usage data, website usage data, informational queries, and product and service e-commerce information such as information about orders, transactions, promotions, subscriptions, bills, shipments, and the like.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "stat",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0165",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The App locally processes the Services Data to provide various features and functionality to you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "Services Data",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "Services Data",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0167",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The personal information we receive via the App may include: * Services Data; * Survey Data; * your IP address; * the Generic ID; * your device type; * your browser version; and * non-granular location; (the “Collected Data”) Any personal information is de-identified upon collection using the Generic ID associated with the installation of the App.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0168",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you uninstall the App, any data that was collected becomes permanently anonymized.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0169",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Upon receiving any Collected Data, our policy is to delete your IP address from our logs within hours of receipt, unless an error is being debugged, in which case it is deleted upon resolution of the error.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "Collected Data",
+          "verb": "receive",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0170",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When stored, the Collected Data is pseudonymized using your Generic ID.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0171",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We never receive or process any of your sensitive personal information, such as specific information regarding your sexual orientation, ethnicity, religious affiliation, refugee status, health, or finances (other than general purchase-related information as noted above).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_collect",
+          "data_object": "any of your sensitive personal information",
+          "verb": "process",
+          "negated": true
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "general purchase-relate information",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0172",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may process your personal information for the purposes described in this Privacy Policy, with your consent; when we have assessed it is necessary for the purposes of the legitimate interests pursued by Sensor Tower or a third party to whom it may be necessary to disclose information; or to comply with a legal obligation.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "process",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0173",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may use your personal information for the following purposes: * to operate, maintain, debug, and improve the App; * to send you technical notices, updates, security alerts and support and administrative messages; * to respond to your comments, questions and requests and provide customer service; * to monitor and analyze trends and usage of the App; * to power and sell, in an anonymized form, other products and services, such as the Sensor Tower available at sensortower.com; * to use, in an anonymized form, in training of neural networks and artificial intelligence; * for scientific and academic research purposes; and * for any other purposes indicated in this Privacy Policy.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "send",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0174",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We will not process your personal information in a way that is incompatible with the purposes for which it has been collected or collect any personal information that is not needed for these purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "it",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_collect",
+          "data_object": "your personal information",
+          "verb": "process",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0175",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not and will never sell your personal information to advertising platforms, data brokers, or information resellers.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_share",
+          "data_object": "your personal information",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0176",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We will also never sell your personal information as may be defined by applicable laws.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_share",
+          "data_object": "your personal information",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0177",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may anonymize information from the Collected Data (\"Anonymized Information\") and use the Anonymized Information for any purpose.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "anonymized Information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0178",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "For example, we may use Anonymized Information to generate,validate, and sell the Anonymized Information and insights about app ecosystems that we provide on our website at app.sensortower.com.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "insight",
+          "verb": "sell",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "anonymized information",
+          "verb": "sell",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0179",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may provide Anonymized Information to third parties, although third parties that receive Anonymized Information cannot use the Anonymized Information to personally identify you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "anonymized Information",
+          "verb": "use",
+          "negated": true
+        },
+        {
+          "entity": "that",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "anonymized Information",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "anonymized Information",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0182",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share your personal information in the following circumstances: ##### **Service Providers** We will share personal information with third parties who perform services on our behalf or operate our services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0183",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "For example, we share personal information with our vendors (e.g., data processors, IT services providers, cloud providers, online platforms, debugging platforms, support providers, etc.), partners and consultants.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "data processor",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0184",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Service Providers can only use the personal information we share with them for the limited purpose under which it was shared.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0185",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Additionally, from time to time, a situation may arise where we may share personal information with third parties including: * **With Your Consent.** * **To Enforce Our Terms of Service.** * **To Prevent Unlawful Activities and Misuse of the App.** * **With Third-Parties To Protect Our Legal Rights, When Required By Law, or as Necessary to Protect Us or the App.** We may access, use, preserve, and share your information with third parties when we have a good faith belief that it is necessary to: detect, prevent and address fraud and other illegal activity; protect ourselves, you and others, including as part of investigations; or prevent death or imminent bodily harm.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "your information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "your information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "your information",
+          "verb": "preserve",
+          "negated": false
+        }
+      ],
+      "n_pred": 5,
+      "error": null
+    },
+    {
+      "id": "re0186",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may also share such information if we believe that you have abused your rights to use the App, are using the App illegally, or violated an applicable law, or in connection with any dispute between you and us with respect to the App.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "such information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "such information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0187",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may also access, use, preserve, and share your information,in response to a legal request if we believe in good faith that the response is required by law in that jurisdiction, applies to users in that jurisdiction, and is consistent with internationally recognized standards.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "your information",
+          "verb": "preserve",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "your information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0188",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If we sell all or part of our business, make a sale or transfer of assets, are otherwise involved in a merger or business transfer, or in the event of bankruptcy, we may confidentially disclose and transfer your personal information to one or more third parties as part of that transaction.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "transfer",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0189",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We also may disclose personal information as described to you at the point of collection or pursuant to your consent.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0190",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you delete the App from your device, your Generic ID is permanently disassociated with that instance of the App and any of your personal information will become Anonymized Information.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0193",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Please note that since we pseudonymize data collected from you, we may need some additional information from you in order to re-identify your personal information.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0194",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Also, if you have uninstalled the App, any data collected from you will have been anonymized and will not be re-identifiable.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0195",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Also, if you have uninstalled the App, any data collected from you will have been anonymized and we will be unable to locate it.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0198",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "As summarized in detail in the Collected Data section above, we collect: * personal identifiers; * commercial information; and * Internet or other electronic network activity information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other electronic network activity information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "* internet",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal identifier",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "commercial information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 4,
+      "error": null
+    },
+    {
+      "id": "re0200",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "As further described in the Collected Data section above, we collect identifiers and commercial information directly from you and we collect Internet or other electronic network activity from your usage of the App and its services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "internet",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "identifier",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "commercial information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0201",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not use cookies or web beacons to collect personal information from you or track your activity.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": true
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0202",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not sell your personal information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_share",
+          "data_object": "your personal information",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0203",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do sell de-identified and/or aggregated consumer information, which does not identify you or any individual person and is not considered personal information by the CCPA (Cal.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "de-identified and/or aggregate consumer information",
+          "verb": "sell",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0204",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share your personal information under the circumstances outlined in the Sharing of your Personal Information section above.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0205",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "the categories of personal information that we have collected about you; * the categories of sources from which we collected the personal information; * the business or commercial purpose for collecting or selling the personal information; * the categories of third parties with whom we share personal information; * the specific pieces of personal information we have collected about you; * the categories of personal information that we disclosed about you for a business purpose; and * the categories of personal information that we have sold about you, as well as the categories of third parties to whom we sold the information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "sell",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "sell",
+          "negated": false
+        }
+      ],
+      "n_pred": 5,
+      "error": null
+    },
+    {
+      "id": "re0206",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Alternatively, such businesses may have in place a policy not to disclose Personal Information of customers to third parties for the third parties’ direct marketing purposes if the customer has exercised an option to opt-out of such information-sharing.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "not_share",
+          "data_object": "Personal Information of customer",
+          "verb": "disclose",
+          "negated": true
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_share",
+          "data_object": "Personal Information of customer",
+          "verb": "disclose",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0207",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not participate in the sharing of your personal information with third parties for the third parties’ direct marketing purposes, so there is no need to opt-out.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0208",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We use data processors that perform particular operations with your personal information for us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "data processor that perform particular operation",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0209",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Data processors (or just processors) are companies that help us, the Data Controller, run the App, support our communication with you or perform other App-related activities.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0210",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "They may process certain personal information on our behalf to accomplish the goals related to the App functions and associated activities.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "they",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "personal information on our behalf",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0213",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Clicking on those links or enabling those connections may allow third parties to collect or share data about you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "datum about you",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "datum about you",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0214",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Important account tokens aren't stored or shared outside of the Scratch website.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "important account tokens",
+          "verb": "store",
+          "negated": true
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_share",
+          "data_object": "important account tokens",
+          "verb": "share",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0215",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Project tokens are shared with the servers behind the TurboWarp Button and Unlisted Projects features to allow them to work properly.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "project tokens",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0216",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not track who is using the extension.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0217",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Web stores allow us to see how many users are using the extension, but we are unable to see who they are.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0228",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Data Collection and Image Processing The core function of this Extension is to recognize text from images (specifically \"Riven Mod\" screenshots from the game Warframe).",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0229",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you use the OCR feature, the selected image or screenshot is sent to a remote server (the OCR Backend) for processing.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "ocr backend",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "screenshot",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "select image",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "screenshot",
+          "verb": "send",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0231",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not store your image data permanently.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_collect",
+          "data_object": "your image data",
+          "verb": "store",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0232",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Images are processed in-memory and discarded immediately after the text extraction is complete.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "image",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0236",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Used to communicate with the remote OCR server for image processing.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0237",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Riven OCR Assistant: Does not collect personal identification information (names, emails, etc.).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "riven ocr assistant",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "personal identification information",
+          "verb": "collect",
+          "negated": true
+        },
+        {
+          "entity": "riven ocr assistant",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "name",
+          "verb": "collect",
+          "negated": true
+        },
+        {
+          "entity": "riven ocr assistant",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "email",
+          "verb": "collect",
+          "negated": true
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0238",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Does not track your browsing history or search queries.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0239",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Does not share any data with third-party advertisers or data brokers.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_share",
+          "data_object": "data",
+          "verb": "share",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0240",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "It does not run analytics, sell user data, or send bookmarks, Quick Links, wallpapers selected from your computer, names, or stored preferences to the developer.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "bookmark",
+          "verb": "send",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "user data",
+          "verb": "sell",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0242",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Cleanstart stores your selected weather city, preferences, Quick Links, and any wallpaper images selected from your computer locally in your browser.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0250",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Cleanstart does not use analytics services to track user activity.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "cleanstart",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "user activity",
+          "verb": "track",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0253",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "You decide how much you share with us To provide you even better services and relevant messages, we collect information about how our applications are found and used.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0254",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This means that when you’re using our services, we track things like which features are used most and which actions trigger error messages.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0257",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We don’t share any more data with them than is absolutely necessary.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_share",
+          "data_object": "more data",
+          "verb": "share",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0258",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We won’t use your personal data for hidden purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0259",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage, and assist in our marketing efforts.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0260",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Advanced Settings Reject All Accept All Cookies Your Opt Out Preference Signal is Honored ## Privacy Preference Center When you visit any website, it may store or retrieve information on your browser, mostly in the form of cookies.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "it",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "retrieve",
+          "negated": false
+        },
+        {
+          "entity": "it",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "form of cookies",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0263",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Allow All ### Manage Consent Preferences #### Performance Cookies Performance Cookies These cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0265",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "All information these cookies collect is aggregated and therefore anonymous.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "aggregate",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0266",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you do not allow these cookies we will not know when you have visited our site, and will not be able to monitor its performance.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0267",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Functional Cookies These cookies enable the website to provide enhanced functionality and personalisation.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0268",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Always Active These cookies are necessary for the website to function and cannot be switched off in our systems.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0270",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These cookies do not store any personally identifiable information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "cookies",
+          "verb": "store",
+          "negated": true
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "not_collect",
+          "data_object": "personally identifiable information",
+          "verb": "store",
+          "negated": true
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0271",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Targeting Cookies These cookies may be set through our site by our advertising partners.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "set",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0273",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "They do not store directly personal information, but are based on uniquely identifying your browser and internet device.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "they",
+          "party": "third_party",
+          "action": "not_collect",
+          "data_object": "directly personal information",
+          "verb": "store",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0274",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Please note that this Policy does not apply to information collected through third-party websites or services that you may access through the Services or that you submit to us through email, text message, or other electronic message or offline.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0276",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Information we collect from you includes: Network information regarding transactions.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0277",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Feedback and correspondence, such as information you provide in your responses to surveys when you participate in market research activities, report a problem with Service, receive customer support, or otherwise correspond with us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "feedback",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "feedback",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "report",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0281",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Such information may include: Social Media Widgets Our Site may include social media features, such as the Facebook “like” button and widgets, such as the “share this” button.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0282",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These features may collect your personal information and track your use of the Site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "feature",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0283",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Information automatically collected We may automatically record certain information about how you use our Site (we refer to this information as “Log Data“).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "record",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0284",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Log Data may include information such as a user’s Internet Protocol (IP) address, device, and browser type, operating system, the pages or features of our Site to which a user browsed and the time spent on those pages or features, the frequency with which the Site is used by a user, search terms, the links on our Site that a user clicked on or used, and other statistics.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "search term",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0286",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may use cookies, local storage, or similar technologies to analyze trends, administer the website, track users’ movements around the website, and to gather demographic information about our user base as a whole.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "demographic information about our user base",
+          "verb": "gather",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0287",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We also use Google Analytics to help us offer you an optimized user experience.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0288",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "You can find more information about Google Analytics’ use of your personal data here: <https://policies.google.com/privacy?hl=en> ## Information we will never collect We will never ask you to share your private keys or wallet seed.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0289",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "## User of personal information To provide our service We will use your personal information in the following ways: * To enable you to access and use the Services * To provide and deliver products and services that you may request.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0291",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "To comply with law We use your personal information as we believe necessary or appropriate to comply with applicable laws, lawful requests, and legal processes, such as to respond to subpoenas or requests from government authorities.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0292",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "To communicate with you We use your personal information to communicate about promotions, upcoming events, and other news about products and services offered by us and our selected partners.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "communicate",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0293",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "To optimize our platform In order to optimize your user experience, we may use your personal information to operate, maintain, and improve our Services.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0295",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "With your consent We may use or share your personal information with your consent, such as when you instruct us to take a specific action with respect to your personal information, or you opt into third-party marketing communications.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0296",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "For compliance, fraud prevention, and safety We may use your personal information to protect, investigate, and deter fraudulent, unauthorized, or illegal activity.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0297",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Sharing of personal information We do not share or sell the personal information that you provide us with other organizations without your express consent, except as described in this Privacy Policy.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0298",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We disclose personal information to third parties under the following circumstances: ### Compliance with Laws and Law Enforcement; Protection and Safety.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "disclose",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0299",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share personal information for legal, protection, and safety purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0300",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share information to comply with laws.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0301",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share information to respond to lawful requests and legal processes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0302",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share information in an emergency.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0304",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share information with those who need it to do work for us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0306",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Other You may permit us to share your personal information with other companies or entities of your choosing.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0307",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "In addition, we retain personal information to comply with applicable law where required, prevent fraud, resolve disputes, troubleshoot problems, assist with any investigation, and other actions permitted by law.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0308",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "In some circumstances, we may anonymize your personal information (so that it can no longer be associated with you) in which case we may use this information indefinitely without further notice to you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0309",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Legal bases for processing We only use your personal information as permitted by law.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0310",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Legal basis To communicate with you To optimize our platform For compliance, fraud prevention, and safety To provide our service These processing activities constitute our legitimate interests.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0311",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We make sure we consider and balance any potential impacts on you (both positive and negative) and your rights before we process your personal information for our legitimate interests.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0312",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We do not use your personal information for activities where our interests are overridden by any adverse impact on you (unless we have your consent or are otherwise required or permitted to by law).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0313",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Use for new purposes We may use your personal information for reasons not described in this Privacy Policy, where we are permitted by law to do so and where the reason is compatible with the purpose for which we collected it.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0314",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If we need to use your personal information for an unrelated purpose, we will notify you and explain the applicable legal basis for that use.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0315",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If we have relied upon your consent for a particular use of your personal information, we will seek your consent for any unrelated purpose.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0317",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may request specific information from you to help us confirm your identity and process your request.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0318",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We and our marketing partners, affiliates, and analytics or service providers use cookies, web beacons, or pixels, and other technologies to ensure everyone who uses the Site has the best possible experience.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0319",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "A cookie (“Cookie”) is a small text file that is placed on your hard drive by a web page server.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0320",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Cookies contain information that can later be read by a web server in the domain that issued the cookie to you.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0321",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Some of the cookies will only be used if you use certain features or select certain preferences, and some cookies will always be used.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "some of cookies",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0322",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Web beacons, tags, and scripts may be used in the Site or in emails to help us to deliver cookies, count visits, understand usage and campaign effectiveness and determine whether an email has been opened and acted upon.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "cookies",
+          "verb": "deliver",
+          "negated": false
+        },
+        {
+          "entity": "web beacon",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "email",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0323",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may receive reports based on the use of these technologies by our service/analytics providers on an individual and aggregated basis.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "report",
+          "verb": "receive",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0324",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We generally use Cookies for the following purposes: * To recognize new or past customers.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0325",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "To store your password if you are registered on our Site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "your password",
+          "verb": "store",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0331",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Some Cookies are necessary for certain uses of the Site, and without such Cookies, we would not be able to provide many services that you need to properly use the Site.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0332",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These Cookies, for example, allow us to operate our Site so you may access it as you have requested and let us recognize that you have created an account and have logged into that account to access Site content.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0333",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "They also include Cookies that enable us to remember your previous actions within the same browsing session and secure our Sites.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0334",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We also use functional Cookies and Cookies from third parties for analysis and marketing purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "Cookies",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "functional cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0335",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Functional Cookies enable certain parts of the site to work properly and your user preferences to remain known.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0336",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Analysis Cookies, among other things, collect information on how visitors use our Site, the content and products that users view most frequently, and the effectiveness of our third-party advertising.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "Analysis Cookies",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0337",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Advertising Cookies assist in delivering ads to relevant audiences and having our ads appear at the top of search results.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0338",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Cookies are either “session” Cookies that are deleted when you end your browser session, or “persistent,” which remain until their deletion by you (discussed below) or the party who served the cookie.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0339",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may link the information collected by Cookies with other information we collect from you pursuant to this Privacy Policy and use the combined information as set forth herein.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "combine information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 5,
+      "error": null
+    },
+    {
+      "id": "re0340",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Similarly, the third parties who serve cookies on our Site may link your name or email address to other information they collect, which may include past purchases made offline or online, or your online usage information.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0342",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Local Storage is deleted when the website that stored them deletes them.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0345",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We use such Customer Data primarily as a processor, meaning we process such Customer Data on behalf of and under the instructions of the relevant customer, in accordance with our [data processing addendum](/legal/dpa).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "such Customer Data",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0346",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may use tracking tools to measure the performance of our advertising campaigns and help deliver personalized ads.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0347",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Note we do not sell your personal information within the meaning of Chapter 603A.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "not_share",
+          "data_object": "your personal information",
+          "verb": "sell",
+          "negated": true
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0348",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "How we use cookies and other tracking technology to collect information 5.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information 5",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "cookies",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0349",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Information we collect and our use# We collect personal information in connection with your visits to and use of the Service.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0350",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This collection includes information that you provide in connection with the Service, information from third parties, and information that is collected automatically such as through the use of cookies and other technologies.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "that",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "use of cookies",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0351",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We collect personal information that you submit directly to us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0352",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We collect personal and/or business information that you provide when you register for an account on the Site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal and/or business information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0355",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "* **_Payment information._** If you make a purchase or payment on the Site, such as for a subscription, we collect transactional information provided in connection with your purchase or payment.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0357",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Rather, all such information is provided directly by you to our third-party processor.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "such information",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0358",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you communicate with us through any paper or electronic form, we may collect your name, email address, mailing address, phone number, or any other personal information you choose to provide to us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "other personal information",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "mailing addresses",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "phone number",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "mailing addresses",
+          "verb": "communicate",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "email addresses",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other personal information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0361",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you become a contributor, we may also collect your GitHub name and feature you on our website.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0362",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you contact us, we will collect the information that you provide us, such as your contact information and the contents of your communication with us.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your contact information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0364",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "After registration, you may create, upload or transmit files, documents, videos, images, data or information as part of your use of the Service (collectively, “** _User Content_** ”).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "video",
+          "verb": "transmit",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "image",
+          "verb": "transmit",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "data",
+          "verb": "transmit",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "transmit",
+          "negated": false
+        }
+      ],
+      "n_pred": 4,
+      "error": null
+    },
+    {
+      "id": "re0366",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "User Content and any information contained in the User Content, including personal information you may have included, is stored and collected as part of the Service.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0367",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may receive personal information about you from our business partners and service providers and combine this information with other data we collect from you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information about you",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "combine",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other data",
+          "verb": "combine",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0368",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The third-parties may include website and service operators, payment processors, and marketing partners.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0375",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you interact with our Site through various social media, such as when you click on the social media icon on the Site, follow us on a social media site, or post a comment to one of our pages, we may receive information from the social network such as your profile information, profile picture, user name, user ID associated with your social media account, and any other information you permit the social network to share with third parties.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "user ID",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "user name",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your profile information",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "profile",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "picture",
+          "verb": "receive",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0376",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The data we receive is dependent upon your privacy settings with the social network.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0378",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may obtain information from other sources, including through third-party information providers, our shareholders, customers, or through transactions such as mergers and acquisitions.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "obtain",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0379",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may combine this information with other information we collect from or about you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "combine",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0380",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "In addition to the uses described above, we may collect and use personal information for the following purposes: * For our business activities, including to operate the Service and to provide you with the features and functionality of the Service; * To communicate with you and respond to your requests, such as to respond to your questions, contact you about changes to the Service, and communicate about account related matters; * For marketing and advertising purposes, such as to market to you or offer you with information and updates on our products or services we think that you may be interested in, unless you have opted not to receive such information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "offer",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0382",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "While we may use your personal information in this manner, please note that we do not use User Content to send you ads, and we will never share User Content with any third parties for marketing or advertising purposes, unless you have explicitly submitted it to us for that purpose; * For analytics and research purposes; * To enforce our **[Terms of Service](/terms)** , to resolve disputes, to carry out our obligations and enforce our rights, and to protect our business interests and the interests and rights of third parties; * To comply with contractual and legal obligations and requirements; * To fulfill any other purpose for which you provide personal information; and * For any other lawful purpose, or other purpose that you consent to.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "User Content",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "User Content",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "provide",
+          "negated": false
+        }
+      ],
+      "n_pred": 4,
+      "error": null
+    },
+    {
+      "id": "re0383",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "How we share personal information# We may share your personal information in the instances described below.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information in instance",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0384",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share your personal information with third-party service providers or business partners who help us deliver or improve our Site or services, or who perform services on our behalf.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "deliver",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0385",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These third parties _are subject to reasonable confidentiality terms and provisions restricting their use of your personal information_ , and may include parties that process payments and coordinate billing, provide web hosting services, assist with our AI powered services, provide analytics, or help us send and segment marketing communications.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0387",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share with other companies and brands owned or controlled by Supabase, and other companies owned by or under common ownership as Supabase.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0388",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These companies will use your personal information in the same way as we can under this Privacy Notice.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "company",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0389",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "* We may transfer any information we collect in the event we sell or transfer all or a portion of our business or assets (including any shares in the company) or any portion or combination of our products, services, businesses and/or assets.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "transfer",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0390",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Should such a transaction occur (whether a divestiture, merger, acquisition, bankruptcy, dissolution, reorganization, liquidation, or similar transaction or proceeding), we will use reasonable efforts to ensure that any transferred information is treated in a manner consistent with this Privacy Notice.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0391",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may disclose your information publicly or with another third party with your prior authorization.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your information",
+          "verb": "disclose",
+          "negated": false
+        },
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "your information",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0393",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may share limited personal information, such as contact identifiers (including email addresses or cryptographic hashes of email addresses), with advertising and marketing partners to create, manage, and measure advertising audiences.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "contact identifier",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "limited personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0396",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Our marketing emails may include tracking technologies to help us understand whether an email was opened or a link was clicked within the email.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0398",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "How We Use Cookies and Other Tracking Technology to Collect Information# We, and our third-party partners, automatically collect certain types of usage information when you visit our Site.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "type of usage information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0399",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We typically collect this information through a variety of tracking technologies, including cookies, web beacons, embedded scripts, location-identifying technologies, file information, and similar technology (collectively, “**tracking technologies** ”).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0400",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We, and our third-party partners, use tracking technologies to automatically collect usage and device information, such as: * Information about your device and its software, such as your IP address, browser type, Internet service provider, device type/model/manufacturer, operating system, date and time stamp, and a unique ID that allows us to uniquely identify your browser or your account (including, for example, a persistent device identifier), and other such information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "our third-party partners",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "your ip addresses",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your ip addresses",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other such information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "our third-party partners",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "other such information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "browser types",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "our third-party partners",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "browser types",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0401",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you access our sites from a mobile device, we may collect unique identification numbers associated with your device or our mobile application mobile carrier, device type, model and manufacturer, mobile device operating system brand and model, and depending on your mobile device settings, we may be able to approximate a device’s location by analyzing other information, like an IP address.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "ip addresses",
+          "verb": "analyze",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "unique identification number",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "analyze",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0403",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We use the data collected through tracking technologies to: (a) remember information so that you will not have to re-enter it during your visit or the next time you visit the site; (b) provide custom content and information; (c) identify you across multiple devices; (d) provide and monitor the effectiveness of our services; (e) monitor aggregate metrics such as total number of visitors, traffic, usage, and demographic patterns on our Site; (f) diagnose or fix technology problems; and (g) to provide, plan for, and enhance our services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "remember",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "data",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "provide",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "traffic",
+          "verb": "monitor",
+          "negated": false
+        }
+      ],
+      "n_pred": 4,
+      "error": null
+    },
+    {
+      "id": "re0404",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may use tracking technologies to measure the effectiveness of our advertising campaigns and to help deliver personalized ads.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0405",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "These tools may collect information about your interactions with our ads and websites, which can be used to analyze advertising metrics and tailor ads specifically to you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "tool",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information about your interaction",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "which",
+          "party": "third_party",
+          "action": "collect",
+          "data_object": "information about your interaction",
+          "verb": "use",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0409",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you create an account and access the Service as an individual, or if you use an email and password to sign up to the service, we will collect your email address, and password.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "password",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your email addresses",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0410",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The data we receive is dependent on your privacy settings with the social network.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0412",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you make a purchase through your own individual account on the Service, we collect information such as your billing address and Tax ID and other information such as date and time of your transaction and products / services purchased.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "date",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "time",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your billing addresses",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "Tax ID",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0415",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "by email or phone or through our feedback form we will record your comments and opinions.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "email",
+          "verb": "record",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0418",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you submit a query through our Supabase AI tool, we will collect the content of your query (i.e.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0420",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We also collect information about the databases and other content you manage through the Service, but only the information about the structure of your databases and metadata, such as column and row headings or other information about how that content is organized.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "row heading",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "column",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information about structure of your database",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information about database",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "metadata",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0424",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you interact with us through a social network, we may receive information from the social network such as your name, profile information, and any other information you permit the social network to share with third parties.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "profile",
+          "verb": "receive",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "other information",
+          "verb": "receive",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    },
+    {
+      "id": "re0428",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Information we collect about your Use of the Site and Service.# We also automatically collect the following personal information about how you access and use the Service, and information about the device you use to access the Service: (a) **Approximate Location information**.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "follow personal information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0429",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "When you visit our Service, we may collect information about your location.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information about your location",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0430",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This information may be derived from WiFi positioning or your IP address.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0432",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you access the Service as an authorized user of another customer, the processing is necessary for our and the customer's legitimate interests, namely presenting the Service to you on your device.| We may share this information with the following service providers through the provision of the Service: Sentry, Tableau, Posthog, Plausible, Google LLC, Fly.io, Vercel, Cloudflare, Configcat, Stape.io, Hex.tech, and Amazon Web Services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "vercel",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "cloudflare",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "sentry",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "posthog",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 6,
+      "error": null
+    },
+    {
+      "id": "re0436",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you access the Service as an authorized user of another customer, the processing is necessary for our and the customer's legitimate interests, namely presenting the Service to you on your device.| We may share this information with the following service providers through the provision of the Service: Posthog, Plausible, Fly.io, Sentry, Hubspot, Google LLC, Vercel, Hex.tech, and Amazon Web Services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0438",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We also collect information about the tablet, smartphone or other electronic device you use to connect to the Service.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information about tablet",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0439",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "This information can include details about the operating systems, browsers and applications connected to the Service through the device and your IP address.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0440",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "If you access the Service as an authorized user of another customer, the processing is necessary for our and the customer's legitimate interests, namely presenting the Service to you on your device.| We may share this information with the following service providers through the provision of the Service: Posthog, Plausible, Hubspot, Fly.io, Vercel, Sentry, Google LLC, Hex.tech, and Amazon Web Services.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0442",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may anonymize and aggregate any of the personal information we collect (so that it does not directly identify you).",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "any of personal information",
+          "verb": "aggregate",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0444",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may also share such anonymized and aggregated information with others.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "aggregate",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0449",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We will share personal information with other companies owned by or under common ownership as Supabase, including our subsidiaries (i.e., any organization we own or control) and our ultimate holding company (i.e., any organization that owns or controls us) and any subsidiaries it owns.| These companies will use your personal information in the same way as we can under these Privacy Disclosures.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0451",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Purchasers and third parties in connection with a business transaction.| Your personal information may be disclosed to third parties in connection with a transaction, such as a merger, sale of assets or shares, reorganization, financing, change of control or acquisition of all or a portion of our business.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "disclose",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "disclose",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0452",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "For instance, if we sell the Service to a third party, we will share the personal information we have collected through the Service with that buyer.| These recipients will use your personal information to complete a transaction to buy all or the part of our business that includes the Service.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "collect",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0454",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "we may share your personal information with third parties as required by law or if we reasonably believe that such action is necessary to (i) comply with the law and the reasonable requests of law enforcement; (ii) detect and investigate illegal activities and breaches of agreements, including our Terms; and/or (iii) exercise or protect the rights, property, or personal safety of Supabase, its users or others.| These recipients will use your personal information in the performance of their regulatory or law enforcement role.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "third party",
+          "party": "third_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "share",
+          "data_object": "your personal information",
+          "verb": "share",
+          "negated": false
+        }
+      ],
+      "n_pred": 2,
+      "error": null
+    },
+    {
+      "id": "re0458",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We rely on your consent for the following marketing-related purposes: (a) sending you marketing communications; (b) using approximate location information to determine which communications are relevant to you; and (c) combining personal information we have collected from different sources to determine which communications are relevant to you.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "personal information",
+          "verb": "combine",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0459",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We may also use tracking technologies to measure the effectiveness of our advertising campaigns and tailor ads specifically to you.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0460",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We will only use these tracking technologies if you have given us your consent to do so.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0464",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "There are certain circumstances where we require your consent to process your personal information.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0465",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "There may be compelling reasons for continuing to process your personal information, and we will assess and inform you if that is the case.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "your personal information",
+          "verb": "process",
+          "negated": false
+        }
+      ],
+      "n_pred": 1,
+      "error": null
+    },
+    {
+      "id": "re0467",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "Used for internal analytics only; no third-party sharing.| N/A (first-party) Cookies are pieces of code that we transfer to your computer's hard disk for record-keeping purposes.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0468",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "The cookies listed as strictly necessary are required for the operation of the Service, such as cookies that enable you to log in to secure areas of the Service.",
+      "gold_tuples": [],
+      "pred_tuples": [],
+      "n_pred": 0,
+      "error": null
+    },
+    {
+      "id": "re0469",
+      "source": "firefox_edge_cus_filter",
+      "category": null,
+      "has_cus_signal": null,
+      "sentence": "We use Analytics cookies to collect information to assess how our Service is used.",
+      "gold_tuples": [],
+      "pred_tuples": [
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "analytic cookies",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "unspecified",
+          "party": "unspecified",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "use",
+          "negated": false
+        },
+        {
+          "entity": "we",
+          "party": "first_party",
+          "action": "collect",
+          "data_object": "information",
+          "verb": "collect",
+          "negated": false
+        }
+      ],
+      "n_pred": 3,
+      "error": null
+    }
+  ]
+}

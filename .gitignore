@@ -4,3 +4,5 @@ src/NER_detection/saved_model/*
 *.pyc
 
 a1_after.txt
+
+sample_dataset*/*

@@ -1,0 +1,20 @@
+{
+  "share": [
+    "share", "sell", "provide", "trade", "transfer",
+    "give", "distribute", "disclose", "send", "rent",
+    "exchange", "report", "transmit",
+    "pass", "express", "supply", "display", "publish",
+    "release", "deliver", "download", "lease",
+    "view", "show", "forward", "hold", "swap", "tell"
+  ],
+  "collect": [
+    "collect", "check", "know", "use", "obtain",
+    "access", "receive", "gather", "store", "save",
+    "keep", "add", "combine", "record",
+    "retain", "get", "perform", "analyze", "recognize",
+    "process", "track", "log", "remember", "relate",
+    "create", "ask", "conduct", "monitor", "request",
+    "link", "associate", "solicit", "read", "preserve",
+    "contain", "include"
+  ]
+}

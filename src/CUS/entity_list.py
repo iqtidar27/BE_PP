@@ -21,6 +21,13 @@ FIRST_PARTY = {
     "the data processor",
     "our service provider",
     "the platform provider",
+
+    "the add-on",
+    "the addon",
+    "this extension",
+    "this service",
+
+    "Our servers"
     
 }
 
@@ -72,7 +79,42 @@ THIRD_PARTY = {
     "Gmail",
     "LinkedIn",
     "GitHub",
+
+    "JobLog",
+    "MongoDB Atlas",
+    "MongoDB",
+    "Supabase Auth",
+    "Supabase",
+    "Microsoft Clarity",
+    "F-Secure",
+    "F-Secure Security Cloud",
+    "Crashlytics",
+    "Firebase Crashlytics",  # if not already
+    "Better Auth",
+    "Intercom",
+    "Segment",
+    "Twilio",
+    "AppsFlyer",
+    "these services",
+
 }
 
 # Optional: combine both for convenience
 ALL_ENTITIES = FIRST_PARTY | {e.lower() for e in THIRD_PARTY}
+
+def first_party_aliases(extension_name: str) -> set[str]:
+    """Surface forms to treat as first-party for this policy."""
+    if not extension_name:
+        return set()
+    name = " ".join(extension_name.strip().split())
+    variants = {
+        name,
+        name.lower(),
+        f"the {name}",
+        f"the {name} extension",
+        f"the {name} app",
+        f"{name} extension",
+        f"{name} app",
+        f"{name} service",
+    }
+    return {v.lower() for v in variants if v.strip()}

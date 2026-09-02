@@ -1,48 +1,130 @@
 #!/usr/bin/env python3
 """
 CUS Tuple Extractor (Stage B – dependency based)
-
-Modular design:
-  - VerbMatcher        : single-word + multi-word SOC verbs
-  - EntityRecognizer   : first-party + third-party entities
-  - DataObjectAligner  : aligns DataObjectNER spans to spaCy tokens
-  - SentenceTagger     : produces a tagged representation of a sentence
-  - DependencyHelper   : small utilities for dependency navigation
-  - TupleExtractor     : extracts (entity, action, data_object) tuples
-  - TupleFilter        : light post-filters to reduce noise
-  - CUSExtractor       : thin orchestrator
 """
 
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import List, Optional, Tuple
+from pathlib import Path
+from typing import List, Optional, Set, Tuple
+import sys
 
 import spacy
 from spacy.matcher import PhraseMatcher
 from spacy.tokens import Doc, Token
 
-from CUS.entity_list import FIRST_PARTY, THIRD_PARTY
-
-from pathlib import Path
-import sys
-
-_SRC_DIR = Path(__file__).resolve().parents[1]  # .../src
+_SRC_DIR = Path(__file__).resolve().parents[1]
 if str(_SRC_DIR) not in sys.path:
     sys.path.insert(0, str(_SRC_DIR))
 
-from NER_detection.inference_ner import DataObjectNER
+from CUS.entity_list import FIRST_PARTY, THIRD_PARTY
 from CUS.soc_verbs import (
     COLLECT_VERBS,
     MULTI_WORD_COLLECT,
     MULTI_WORD_SHARE,
     SHARE_VERBS,
+    SOC_VERB_BLOCKLIST,
+)
+from NER_detection.inference_ner import DataObjectNER
+
+
+FIRST_PARTY_ALWAYS = {
+    "this extension",
+    "our extension",
+    "the extension",
+    "this service",
+    "the research team",
+    "our team",
+}
+
+ENTITY_BLOCKLIST = {
+    "gdpr",
+    "ccpa",
+    "the gdpr",
+    "the ccpa",
+    "general data protection regulation",
+    "the general data protection regulation",
+    "california consumer privacy act",
+    "the california consumer privacy act",
+    "privacy policy",
+    "this privacy policy",
+    "cookies policy",
+    "user data policy",
+    "chrome web store user data policy",
+    "google api services user data policy",
+    "terms of service",
+    "users",
+}
+
+ORG_REJECT_SUBSTR = (
+    "privacy policy",
+    "cookies policy",
+    "data policy",
+    "regulation",
+    "consumer privacy act",
+    "legal basis",
+    "data processing",
+    "data transfer",
+    "data deletion",
+    "your rights",
+    "website access",
 )
 
+ORG_NOISE = {
+    "ip", "api", "sms", "url", "http", "https", "pdf", "id", "uid",
+    "pii", "gdpr", "ccpa", "cpu", "gpu", "os", "app", "web", "ai",
+    "sdk", "cdn", "dns", "ssl", "tls", "html", "css", "js",
+}
 
-# ===========================================================================
-# 1. Data classes
-# ===========================================================================
+SITEISH = {
+    "site", "website", "service", "services",
+    "policy", "page", "account", "accounts",
+}
+
+WE_FALLBACK = {
+    "we", "us", "the company", "the extension",
+    "the service", "our extension",
+}
+
+USED_TO_XCOMP = {
+    "measure", "analyze", "analyse", "track", "monitor",
+    "assess", "evaluate", "process", "collect", "store",
+    "record", "log",
+}
+
+
+def first_party_aliases(extension_name: str) -> Set[str]:
+    if not extension_name or not extension_name.strip():
+        return set()
+    name = " ".join(extension_name.strip().split())
+    variants = {
+        name,
+        name.lower(),
+        f"the {name}",
+        f"the {name} extension",
+        f"the {name} app",
+        f"{name} extension",
+        f"{name} app",
+        f"{name} service",
+    }
+    return {v.lower() for v in variants if v.strip()}
+
+
+def _norm(text: str) -> str:
+    return " ".join(text.lower().split())
+
+
+def _is_blocked(text: str) -> bool:
+    n = _norm(text)
+    if n in ENTITY_BLOCKLIST or n in ORG_NOISE:
+        return True
+    if any(s in n for s in ORG_REJECT_SUBSTR):
+        return True
+    if len(n.split()) > 6:
+        return True
+    return False
+
 
 @dataclass
 class TaggedToken:
@@ -86,15 +168,12 @@ class EntitySpan:
     root: Token
 
 
-# ===========================================================================
-# 2. VerbMatcher
-# ===========================================================================
-
 class VerbMatcher:
     def __init__(self, nlp: spacy.language.Language):
         self.nlp = nlp
         self.collect_lemmas = {v.lower() for v in COLLECT_VERBS}
         self.share_lemmas = {v.lower() for v in SHARE_VERBS}
+        self.soc = self.collect_lemmas | self.share_lemmas
 
         self.matcher = PhraseMatcher(nlp.vocab, attr="LOWER")
         self._add_phrases(MULTI_WORD_COLLECT, "COLLECT_MWE")
@@ -108,7 +187,6 @@ class VerbMatcher:
         results: List[Tuple[Token, str]] = []
         matched_spans = set()
 
-        # Multi-word first
         for match_id, start, end in self.matcher(doc):
             label = self.nlp.vocab.strings[match_id]
             verb_type = "collect" if "COLLECT" in label else "share"
@@ -120,16 +198,50 @@ class VerbMatcher:
             results.append((head, verb_type))
             matched_spans.update(range(start, end))
 
-        # Single-word
         for token in doc:
             if token.i in matched_spans:
                 continue
 
             lemma = token.lemma_.lower()
-            if lemma not in self.collect_lemmas and lemma not in self.share_lemmas:
+            text_l = token.text.lower()
+            if lemma in SOC_VERB_BLOCKLIST or text_l in SOC_VERB_BLOCKLIST:
+                continue
+            if lemma in {"view", "report"} and token.pos_ != "VERB":
+                continue
+            if lemma in {"view", "report"} and token.dep_ in {
+                "compound", "amod", "nsubj", "dobj", "npadvmod", "pobj"
+            }:
                 continue
 
-            # Robust filter (handles spaCy mis-tagging of known SOC verbs)
+            if lemma not in self.collect_lemmas and lemma not in self.share_lemmas:
+                continue
+            if lemma in {"log", "access"} and token.dep_ in {"amod", "acl"}:
+                continue
+            if lemma == "use":
+                dobjs = [c for c in token.children if c.dep_ in {"dobj", "pobj"}]
+                if dobjs and dobjs[0].lemma_.lower() in SITEISH:
+                    continue
+
+            if lemma in {"allow", "enable", "permit"}:
+                has_soc = any(
+                    ch.dep_ in {"xcomp", "ccomp"}
+                    and ch.lemma_.lower() in (self.soc | USED_TO_XCOMP)
+                    for ch in token.children
+                )
+                if not has_soc:
+                    continue
+
+            if lemma == "receive":
+                dobjs = [c for c in token.children if c.dep_ == "dobj"]
+                if not dobjs:
+                    continue
+                if any(
+                    d.lemma_.lower()
+                    in {"protection", "level", "treatment", "safeguard"}
+                    for d in dobjs
+                ):
+                    continue
+
             if token.pos_ == "VERB":
                 accept = True
             elif lemma in self.collect_lemmas or lemma in self.share_lemmas:
@@ -154,96 +266,113 @@ class VerbMatcher:
         return results
 
 
-# ===========================================================================
-# 3. EntityRecognizer
-# ===========================================================================
-
 class EntityRecognizer:
     def __init__(self, nlp: spacy.language.Language):
         self.nlp = nlp
-        self.first_party = {e.lower() for e in FIRST_PARTY}
+        self.base_first_party = {e.lower() for e in FIRST_PARTY} | FIRST_PARTY_ALWAYS
+        self.extra_first_party: Set[str] = set()
         self.third_party = {e.lower() for e in THIRD_PARTY}
+        self.soc_lemmas = {v.lower() for v in COLLECT_VERBS} | {
+            v.lower() for v in SHARE_VERBS
+        }
 
-        ruler = nlp.add_pipe(
-            "entity_ruler", before="ner", config={"overwrite_ents": True}
-        )
-        patterns = [{"label": "THIRD_PARTY", "pattern": name} for name in THIRD_PARTY]
-        patterns += [
-            {"label": "THIRD_PARTY", "pattern": name.lower()} for name in THIRD_PARTY
-        ]
-        ruler.add_patterns(patterns)
+        if "entity_ruler" not in nlp.pipe_names:
+            ruler = nlp.add_pipe(
+                "entity_ruler", before="ner", config={"overwrite_ents": True}
+            )
+            patterns = [{"label": "THIRD_PARTY", "pattern": name} for name in THIRD_PARTY]
+            patterns += [
+                {"label": "THIRD_PARTY", "pattern": name.lower()} for name in THIRD_PARTY
+            ]
+            ruler.add_patterns(patterns)
+
+    def _it_is_soc_subject(self, token: Token) -> bool:
+        if token.text.lower() != "it":
+            return False
+        if token.dep_ not in {"nsubj", "nsubjpass"}:
+            return False
+        head = token.head
+        lemma = head.lemma_.lower()
+        if lemma in self.soc_lemmas:
+            return True
+        if lemma in {"be", "use"}:
+            for ch in head.children:
+                if ch.dep_ in {"xcomp", "acomp"} and ch.lemma_.lower() in self.soc_lemmas:
+                    return True
+        return False
+
+    def set_extra_first_party(self, names: Set[str]) -> None:
+        self.extra_first_party = {n.lower() for n in names}
+
+    @property
+    def first_party(self) -> Set[str]:
+        return self.base_first_party | self.extra_first_party
+
+    def _role(self, text: str) -> Optional[str]:
+        n = _norm(text)
+        if _is_blocked(text):
+            return None
+        if n in self.first_party:
+            return "first_party"
+        if n in self.third_party:
+            return "third_party"
+        return None
 
     def find_entities(self, doc: Doc) -> List[EntitySpan]:
         results: List[EntitySpan] = []
         seen = set()
 
-        # A. Third-party
+        def add(text: str, tokens: List[Token], root: Token, etype: str) -> None:
+            if not tokens or any(t.i in seen for t in tokens):
+                return
+            if _is_blocked(text):
+                return
+            results.append(
+                EntitySpan(
+                    text=text,
+                    text_normalized=_norm(text),
+                    entity_type=etype,
+                    tokens=tokens,
+                    root=root,
+                )
+            )
+            seen.update(t.i for t in tokens)
+
         for ent in doc.ents:
             lower = ent.text.lower()
+            if lower in self.first_party:
+                add(ent.text, list(ent), ent.root, "first_party")
+                continue
             if ent.label_ == "THIRD_PARTY" or lower in self.third_party:
-                tokens = list(ent)
-                if not tokens or any(t.i in seen for t in tokens):
-                    continue
-                results.append(
-                    EntitySpan(
-                        text=ent.text,
-                        text_normalized=lower,
-                        entity_type="third_party",
-                        tokens=tokens,
-                        root=ent.root,
-                    )
-                )
-                seen.update(t.i for t in tokens)
+                role = self._role(ent.text)
+                if role == "third_party":
+                    add(ent.text, list(ent), ent.root, "third_party")
 
-        # B. First-party multi-word (prefer longer spans)
         first_party_multi = [p for p in self.first_party if " " in p]
         if first_party_multi:
             matcher = PhraseMatcher(self.nlp.vocab, attr="LOWER")
-            patterns = [self.nlp.make_doc(p) for p in first_party_multi]
-            matcher.add("FIRST_PARTY_MWE", patterns)
-
-            # Important: sort matches by length DESC so longer phrases win
-            raw_matches = list(matcher(doc))
-            raw_matches.sort(key=lambda m: (m[2] - m[1], -m[1]), reverse=True)
-
-            for _, start, end in raw_matches:
+            matcher.add(
+                "FIRST_PARTY_MWE",
+                [self.nlp.make_doc(p) for p in first_party_multi],
+            )
+            raw = list(matcher(doc))
+            raw.sort(key=lambda m: (m[2] - m[1], -m[1]), reverse=True)
+            for _, start, end in raw:
                 if any(i in seen for i in range(start, end)):
                     continue
                 span = doc[start:end]
-                results.append(
-                    EntitySpan(
-                        text=span.text,
-                        text_normalized=span.text.lower(),
-                        entity_type="first_party",
-                        tokens=list(span),
-                        root=span.root,
-                    )
-                )
-                seen.update(range(start, end))
+                add(span.text, list(span), span.root, "first_party")
 
-        # C. First-party single tokens
         for token in doc:
             if token.i in seen:
                 continue
             lower = token.text.lower()
-            if lower in self.first_party:
-                results.append(
-                    EntitySpan(
-                        text=token.text,
-                        text_normalized=lower,
-                        entity_type="first_party",
-                        tokens=[token],
-                        root=token,
-                    )
-                )
-                seen.add(token.i)
-
-        # D. Optional spaCy ORG/PERSON merge (unknown vendors only)
-        NOISE = {
-            "ip", "api", "sms", "url", "http", "https", "pdf", "id", "uid",
-            "pii", "gdpr", "ccpa", "cpu", "gpu", "os", "app", "web", "ai",
-            "sdk", "cdn", "dns", "ssl", "tls", "html", "css", "js",
-        }
+            if lower == "it":
+                if self._it_is_soc_subject(token):
+                    add(token.text, [token], token, "first_party")
+                continue
+            if lower in self.first_party and not _is_blocked(token.text):
+                add(token.text, [token], token, "first_party")
 
         for ent in doc.ents:
             if ent.label_ not in {"ORG", "PERSON"}:
@@ -251,36 +380,23 @@ class EntityRecognizer:
             tokens = list(ent)
             if not tokens or any(t.i in seen for t in tokens):
                 continue
-
             surface = ent.text.strip()
             lower = surface.lower()
-
-            # Skip noise / already-known / too short
-            if lower in NOISE or lower in self.third_party or lower in self.first_party:
+            if _is_blocked(surface) or lower in ORG_NOISE:
                 continue
             if len(surface) < 3:
                 continue
-            # Prefer multi-word or capitalized single tokens
             if len(tokens) == 1 and not tokens[0].text[:1].isupper():
                 continue
-
-            results.append(
-                EntitySpan(
-                    text=surface,
-                    text_normalized=lower,
-                    entity_type="third_party",
-                    tokens=tokens,
-                    root=ent.root,
-                )
-            )
-            seen.update(t.i for t in tokens)
+            if lower in self.first_party:
+                add(surface, tokens, ent.root, "first_party")
+            elif lower in self.third_party:
+                continue
+            else:
+                add(surface, tokens, ent.root, "third_party")
 
         return results
 
-
-# ===========================================================================
-# 4. DataObjectAligner
-# ===========================================================================
 
 class DataObjectAligner:
     def __init__(self, ner_model: DataObjectNER):
@@ -289,13 +405,11 @@ class DataObjectAligner:
     def find_data_objects(self, doc: Doc) -> List[DataObjectSpan]:
         result = self.ner.predict(doc.text)
         spans: List[DataObjectSpan] = []
-
         for ent in result["entities"]:
             start_char, end_char = ent["start"], ent["end"]
             surface = ent["text"].strip()
             if not surface:
                 continue
-
             matching_tokens = [
                 t
                 for t in doc
@@ -303,7 +417,6 @@ class DataObjectAligner:
             ]
             if not matching_tokens:
                 continue
-
             spans.append(
                 DataObjectSpan(
                     text=surface,
@@ -315,12 +428,13 @@ class DataObjectAligner:
         return spans
 
 
-# ===========================================================================
-# 5. SentenceTagger
-# ===========================================================================
-
 class SentenceTagger:
-    NEGATION_WORDS = {"not", "n't", "never", "no", "neither", "nor"}
+    NEGATION_WORDS = {
+        "not", "n't", "never", "no", "neither", "nor",
+        "don't", "dont", "doesn't", "doesnt",
+        "didn't", "didnt", "won't", "wont",
+        "cannot", "can't",
+    }
 
     def __init__(
         self,
@@ -354,10 +468,6 @@ class SentenceTagger:
         return tagged, entity_spans, data_spans
 
 
-# ===========================================================================
-# 6. DependencyHelper
-# ===========================================================================
-
 class DependencyHelper:
     @staticmethod
     def get_subtree_tokens(token: Token) -> List[Token]:
@@ -369,6 +479,22 @@ class DependencyHelper:
     ) -> bool:
         if tagged and tagged[0].token.text.lower() in {"no", "none", "never"}:
             return True
+
+        neg_words = {
+            "not", "n't", "never", "no", "neither", "nor",
+            "don't", "dont", "doesn't", "doesnt",
+            "didn't", "didnt", "won't", "wont",
+            "cannot", "can't",
+        }
+
+        for ch in token.children:
+            if ch.dep_ == "neg" or ch.text.lower() in neg_words:
+                return True
+        if token.head is not token:
+            for ch in token.head.children:
+                if ch.dep_ == "neg" or ch.text.lower() in neg_words:
+                    return True
+
         start = max(0, token.i - window)
         end = min(len(tagged), token.i + window + 1)
         return any(tagged[i].is_negation for i in range(start, end))
@@ -378,13 +504,11 @@ class DependencyHelper:
         return list(token.ancestors)
 
 
-# ===========================================================================
-# 7. TupleExtractor
-# ===========================================================================
-
 class TupleExtractor:
     def __init__(self):
         self.helper = DependencyHelper()
+        self.collect_lemmas = {v.lower() for v in COLLECT_VERBS}
+        self.share_lemmas = {v.lower() for v in SHARE_VERBS}
 
     def extract(
         self,
@@ -395,8 +519,7 @@ class TupleExtractor:
     ) -> List[CUSTuple]:
         tuples: List[CUSTuple] = []
         verbs = [t for t in tagged if t.is_verb]
-
-        if not verbs or not data_spans:
+        if not verbs:
             return []
 
         for v in verbs:
@@ -405,32 +528,99 @@ class TupleExtractor:
             negated = self.helper.find_negation_nearby(verb_token, tagged)
             action = f"not_{verb_type}" if negated else verb_type
 
-            related_data = self._find_related_data(verb_token, data_spans)
-            related_entities = self._find_related_entities(verb_token, entity_spans)
+            if self._is_hypothetical_if_collect(verb_token):
+                continue
 
-            # A2: ignore secondary-clause verbs that only attach to weak pronouns
+            related_data = self._find_related_data(verb_token, data_spans)
+            prefer_tokens: Set[Token] = set()
+
+            if verb_token.lemma_.lower() == "use" or verb_token.text.lower() in {
+                "used",
+                "use",
+            }:
+                xcomps = [
+                    ch
+                    for ch in verb_token.children
+                    if ch.dep_ == "xcomp"
+                    and ch.lemma_.lower()
+                    in (self.collect_lemmas | self.share_lemmas | USED_TO_XCOMP)
+                ]
+                if xcomps:
+                    for ch in verb_token.children:
+                        if ch.dep_ in {"nsubj", "nsubjpass"}:
+                            prefer_tokens.update(ch.subtree)
+                    extra: List[DataObjectSpan] = []
+                    extra.extend(self._find_related_data(verb_token, data_spans))
+                    for xc in xcomps:
+                        extra.extend(self._find_related_data(xc, data_spans))
+                    if extra:
+                        related_data = extra
+                    else:
+                        related_data = self._fallback_used_to_object(verb_token)
+
+            if (
+                verb_token.dep_ == "xcomp"
+                and verb_token.head.lemma_.lower() == "use"
+            ):
+                continue
+
+            if not related_data:
+                if any(
+                    t.text.lower() in {"neither", "nor"} for t in verb_token.doc
+                ) and verb_token.lemma_.lower() in {
+                    "share",
+                    "sell",
+                    "transfer",
+                    "disclose",
+                }:
+                    related_data = list(data_spans)
+
+            if not related_data and verb_token.lemma_.lower() in {
+                "disclose",
+                "share",
+                "report",
+            }:
+                related_data = self._fallback_legal_disclosure(
+                    verb_token, data_spans
+                )
+
+            if not related_data:
+                continue
+
+            related_entities = self._find_related_entities(
+                verb_token,
+                entity_spans,
+                prefer_tokens=prefer_tokens or None,
+            )
+
             if verb_token.dep_ in {"advcl", "relcl"}:
                 related_entities = [
                     e
                     for e in related_entities
                     if e.text_normalized not in {"you", "your", "my"}
                 ]
-                if not related_entities:
-                    continue
-
-            if not related_data:
-                continue
 
             if not related_entities:
-                related_entities = [
-                    EntitySpan(
-                        text="unspecified",
-                        text_normalized="unspecified",
-                        entity_type="unknown",
-                        tokens=[],
-                        root=verb_token,
-                    )
-                ]
+                if self._is_passive(verb_token) and not self._has_explicit_agent(
+                    verb_token
+                ):
+                    we_spans = [
+                        e
+                        for e in entity_spans
+                        if e.text_normalized in WE_FALLBACK
+                    ]
+                    if we_spans:
+                        related_entities = [we_spans[0]]
+                if not related_entities:
+                    related_entities = [
+                        EntitySpan(
+                            text="unspecified",
+                            text_normalized="unspecified",
+                            entity_type="unknown",
+                            tokens=[],
+                            root=verb_token,
+                        )
+                    ]
 
             for ent in related_entities:
                 for data in related_data:
@@ -450,17 +640,119 @@ class TupleExtractor:
                     )
         return tuples
 
+    def _fallback_legal_disclosure(
+        self, verb: Token, data_spans: List[DataObjectSpan]
+    ) -> List[DataObjectSpan]:
+        sent = verb.doc.text.lower()
+        if not any(
+            p in sent
+            for p in (
+                "law enforcement",
+                "legal authority",
+                "legal authorities",
+                "court",
+                "subpoena",
+                "required by law",
+            )
+        ):
+            return []
+        if data_spans:
+            return list(data_spans)
+        hits = [
+            t
+            for t in verb.doc
+            if t.lemma_.lower() in {"information", "data"}
+            and t.pos_ in {"NOUN", "PROPN"}
+        ]
+        if not hits:
+            return []
+        return [
+            DataObjectSpan(
+                text=hits[0].text,
+                text_normalized=hits[0].text.lower(),
+                tokens=[hits[0]],
+                root=hits[0],
+            )
+        ]
+
+    def _fallback_used_to_object(self, verb: Token) -> List[DataObjectSpan]:
+        hints = {
+            "traffic",
+            "conversion",
+            "conversions",
+            "performance",
+            "request",
+            "requests",
+            "interaction",
+            "usage",
+        }
+        hits = [
+            t
+            for t in verb.doc
+            if t.lemma_.lower() in hints and t.pos_ in {"NOUN", "PROPN"}
+        ]
+        if not hits:
+            return []
+        return [
+            DataObjectSpan(
+                text=hits[0].text,
+                text_normalized=hits[0].text.lower(),
+                tokens=[hits[0]],
+                root=hits[0],
+            )
+        ]
+
+    def _is_hypothetical_if_collect(self, verb: Token) -> bool:
+        if verb.lemma_.lower() not in self.collect_lemmas:
+            return False
+        cur = verb
+        for _ in range(6):
+            if cur.dep_ in {"ccomp", "advcl", "relcl"}:
+                head = cur.head
+                if head.lemma_.lower() in {"discover", "find", "learn", "realize"}:
+                    return True
+                for ch in head.children:
+                    if ch.dep_ == "mark" and ch.text.lower() == "if":
+                        if head.lemma_.lower() in {"discover", "find", "learn"}:
+                            return True
+            if cur.head is cur:
+                break
+            cur = cur.head
+        return False
+
+    def _is_passive(self, verb: Token) -> bool:
+        if any(c.dep_ in {"auxpass", "nsubjpass"} for c in verb.children):
+            return True
+        if verb.tag_ == "VBN" and any(
+            c.dep_ == "aux" and c.lemma_ == "be" for c in verb.children
+        ):
+            return True
+        return False
+
+    def _has_explicit_agent(self, verb: Token) -> bool:
+        return any(c.dep_ == "agent" for c in verb.children)
+
     def _find_related_entities(
-        self, verb: Token, entity_spans: List[EntitySpan]
+        self,
+        verb: Token,
+        entity_spans: List[EntitySpan],
+        prefer_tokens: Optional[Set[Token]] = None,
     ) -> List[EntitySpan]:
         related: List[EntitySpan] = []
 
-        # Resolve main verb (aux / auxpass)
+        if prefer_tokens:
+            preferred = [
+                span
+                for span in entity_spans
+                if any(t in prefer_tokens for t in span.tokens)
+            ]
+            if preferred:
+                return preferred
+
         main_verb = verb
         if verb.dep_ in ("aux", "auxpass") and verb.head.pos_ == "VERB":
             main_verb = verb.head
 
-        # A4: coordinated verb (conj) inherits subjects from its head verb
         subj_source = main_verb
         if main_verb.dep_ == "conj" and main_verb.head.pos_ == "VERB":
             subj_source = main_verb.head
@@ -473,7 +765,6 @@ class TupleExtractor:
                 for g in child.children:
                     subject_tokens.update(g.subtree)
 
-        # Also take subjects directly on main_verb if different from subj_source
         if subj_source is not main_verb:
             for child in main_verb.children:
                 if child.dep_ in ("nsubj", "nsubjpass"):
@@ -482,10 +773,15 @@ class TupleExtractor:
                     for g in child.children:
                         subject_tokens.update(g.subtree)
 
+        if not subject_tokens and main_verb.dep_ in {"advcl", "xcomp", "pcomp"}:
+            parent = main_verb.head
+            for ch in parent.children:
+                if ch.dep_ in {"nsubj", "nsubjpass"}:
+                    subject_tokens.update(ch.subtree)
+
         for span in entity_spans:
             if any(t in subject_tokens for t in span.tokens):
                 related.append(span)
-
         if related:
             return related
 
@@ -511,35 +807,36 @@ class TupleExtractor:
         if verb.dep_ in ("aux", "auxpass") and verb.head.pos_ == "VERB":
             main_verb = verb.head
 
+        soc = self.collect_lemmas | self.share_lemmas
+        soc_idx = [
+            t.i
+            for t in verb.doc
+            if t.lemma_.lower() in soc and t.i != main_verb.i
+        ]
         verb_subtree = set(self.helper.get_subtree_tokens(main_verb))
 
         for span in data_spans:
+            dist = abs(span.root.i - main_verb.i)
+            if soc_idx:
+                other = min(abs(span.root.i - i) for i in soc_idx)
+                if other < dist:
+                    continue
             if any(t in verb_subtree for t in span.tokens):
                 related.append(span)
                 continue
             if main_verb in self.helper.get_ancestors(span.root):
                 related.append(span)
-                continue
-            if abs(span.root.i - main_verb.i) <= 12:
-                related.append(span)
-                continue
-            if span.root.i > main_verb.i and (span.root.i - main_verb.i) <= 15:
-                related.append(span)
+
+        if not related:
+            for span in data_spans:
+                head = span.root.head
+                if head == main_verb or head.head == main_verb:
+                    related.append(span)
         return related
 
 
-# ===========================================================================
-# 8. TupleFilter
-# ===========================================================================
 class TupleFilter:
-    """
-    Light post-filters:
-      1. Pure possessive pronoun entities → rewrite to 'unspecified'
-      2. Weak secondary pronoun tuples → drop when a stronger tuple exists
-    """
-
     POSSESSIVE_PRONOUNS = {"your", "our", "my", "his", "her", "their"}
-    # Only these are treated as weak secondary actors (not "we")
     WEAK_SECONDARY = {"you", "your", "my"}
 
     def filter(self, tuples: List[CUSTuple]) -> List[CUSTuple]:
@@ -571,7 +868,21 @@ class TupleFilter:
             if self._is_weak_secondary(t, rewritten):
                 continue
             cleaned.append(t)
-        return cleaned
+
+        seen = set()
+        unique: List[CUSTuple] = []
+        for t in cleaned:
+            key = (
+                t.entity_normalized,
+                t.action,
+                t.data_object_normalized,
+                t.negated,
+            )
+            if key in seen:
+                continue
+            seen.add(key)
+            unique.append(t)
+        return unique
 
     def _is_weak_secondary(self, t: CUSTuple, all_tuples: List[CUSTuple]) -> bool:
         if t.entity_normalized not in self.WEAK_SECONDARY:
@@ -581,7 +892,6 @@ class TupleFilter:
                 continue
             if other.data_object_normalized != t.data_object_normalized:
                 continue
-            # Stronger = third party, or first party that is not a weak secondary pronoun
             if other.entity_type == "third_party":
                 return True
             if (
@@ -589,19 +899,12 @@ class TupleFilter:
                 and other.entity_normalized not in self.WEAK_SECONDARY
             ):
                 return True
-            if other.entity_type == "unknown" and other.entity_normalized == "unspecified":
-                # do not let unspecified suppress a weak secondary by itself
-                continue
         return False
 
-# ===========================================================================
-# 9. CUSExtractor (orchestrator)
-# ===========================================================================
 
 class CUSExtractor:
     def __init__(self, ner_model_path: str, spacy_model: str = "en_core_web_sm"):
         self.nlp = spacy.load(spacy_model)
-
         self.verb_matcher = VerbMatcher(self.nlp)
         self.entity_recognizer = EntityRecognizer(self.nlp)
         self.data_aligner = DataObjectAligner(DataObjectNER(ner_model_path))
@@ -613,57 +916,98 @@ class CUSExtractor:
         self.tuple_extractor = TupleExtractor()
         self.tuple_filter = TupleFilter()
 
-    def extract(self, sentence: str) -> List[CUSTuple]:
+    def set_extension_name(self, extension_name: Optional[str]) -> None:
+        self.entity_recognizer.set_extra_first_party(
+            first_party_aliases(extension_name or "")
+        )
+
+    def extract(
+        self,
+        sentence: str,
+        extension_name: Optional[str] = None,
+    ) -> List[CUSTuple]:
         if not sentence or not sentence.strip():
             return []
+        if extension_name is not None:
+            self.set_extension_name(extension_name)
 
         doc = self.nlp(sentence)
         tagged, entity_spans, data_spans = self.tagger.tag(doc)
-        raw_tuples = self.tuple_extractor.extract(
-            doc, tagged, entity_spans, data_spans
+        tagged, entity_spans = self._drop_data_overlaps(
+            tagged, entity_spans, data_spans
         )
-        return self.tuple_filter.filter(raw_tuples)
+        raw = self.tuple_extractor.extract(doc, tagged, entity_spans, data_spans)
+        return self.tuple_filter.filter(raw)
+
+    @staticmethod
+    def _drop_data_overlaps(tagged, entity_spans, data_spans):
+        """A token inside a data-object span is not an actor and not a SOC verb."""
+        data_ids = {t.i for span in data_spans for t in span.tokens}
+        data_norms = {span.text_normalized for span in data_spans}
+
+        for i in data_ids:
+            if i < len(tagged):
+                tagged[i].is_verb = False
+                tagged[i].verb_type = None
+
+        cleaned = []
+        for e in entity_spans:
+            if any(t.i in data_ids for t in e.tokens):
+                continue
+            en = e.text_normalized
+            if any(
+                en == d or d.startswith(en + " ") or en in d.split()
+                for d in data_norms
+            ):
+                continue
+            cleaned.append(e)
+        return tagged, cleaned
 
     def extract_batch(self, sentences: List[str]) -> List[List[CUSTuple]]:
         return [self.extract(s) for s in sentences]
 
 
-# ===========================================================================
-# 10. Minimal smoke test
-# ===========================================================================
-
 if __name__ == "__main__":
     NER_MODEL_PATH = (
         "/home/ayon/git/BE_PP/src/NER_detection/saved_model/"
-        "dataobj_ner_v5_focal1.5_len256_unf6"
+        "dataobj_ner_v5_focal1.5_len256_unf6_dataset_version_v4_augmented_final"
     )
     extractor = CUSExtractor(ner_model_path=NER_MODEL_PATH)
 
     samples = [
-        "We collect your IP address and email address when you visit our website.",
-        "Google Analytics collects anonymized usage data from our users.",
-        "No personal information is collected through this service.",
-        "Stripe processes your payment information on our behalf.",
-        "The extension does not transmit any browsing history to external servers.",
-        "PostHog and Mixpanel collect analytics data from users.",
-        "Your email address will not be sold to third parties.",
+        ("Crashlytics is used to collect crash reports.", "Algo"),
+        ("Google Analytics is used to measure traffic.", "Algo"),
+        ("PostHog is used to analyze how you interact with the app.", "Algo"),
+        ("Pixels are used to track conversions.", "Algo"),
+        ("Cloudflare is used to process requests on our behalf.", "Algo"),
+        (
+            "Google Analytics and Meta Pixel are used to measure advertising performance.",
+            "Algo",
+        ),
+        ("We enable Google Analytics to measure site traffic.", "Algo"),
+        (
+            "We may disclose your information to law enforcement if required by law.",
+            "Algo",
+        ),
+        ("We will not disclose your information except as required by law.", "Algo"),
+        ("We collect your email address.", "Algo"),
+        (
+            "Google Analytics collects anonymized usage data from our users.",
+            "Algo",
+        ),
+        ("This privacy policy explains our practices.", "Algo"),
     ]
 
     print("=" * 80)
-    print("CUS Tuple Extraction – Smoke Test")
+    print("CUS smoke – used-to / disclose")
     print("=" * 80)
-
-    for i, sentence in enumerate(samples, 1):
-        print(f"\n[{i}] {sentence}")
-        print("-" * 80)
-        tuples = extractor.extract(sentence)
-        if not tuples:
-            print("  (no tuples extracted)")
+    for sent, name in samples:
+        print(f"\n[{name}] {sent}")
+        ts = extractor.extract(sent, extension_name=name)
+        if not ts:
+            print("  (none)")
             continue
-        for t in tuples:
-            print(f"  Entity     : {t.entity:<25} ({t.entity_type})")
-            print(f"  Action     : {t.action}")
-            print(f"  Verb       : {t.verb}")
-            print(f"  Data Object: {t.data_object}")
-            print(f"  Negated    : {t.negated}")
-            print()
+        for t in ts:
+            print(
+                f"  {t.entity} ({t.entity_type}) | {t.action} | {t.verb} | {t.data_object} | neg={t.negated}"
+            )

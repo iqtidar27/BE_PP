@@ -30,6 +30,7 @@ COLLECT_VERBS = {
     "place",
     "log",
     "record",
+    "track", "access", "receive", "record", "store", "collect", "process", "log", "set", "place"
 }
 
 # ------------------------------------------------------------
@@ -52,6 +53,10 @@ SHARE_VERBS = {
     # add to SHARE_VERBS
     "send",
     "sent",   # only if you store surface forms; otherwise lemma "send" is enough
+
+    # ensure present
+    "disclose", "exchange", "transmit", "send", "transfer", "sell", "share", "provide","enable",
+    "permit",
 }
 
 # ------------------------------------------------------------
@@ -82,3 +87,20 @@ MULTI_WORD_SHARE = [
     "send to",
     "transmit to",
 ]
+
+# soc_verbs.py
+SOC_VERB_BLOCKLIST = {
+    "ask", "request", "include", "includes", "including",
+    "retain", "retained", "link", "linked",
+    "show", "shows", "showing",
+    "get", "gets",  # rights: "get a copy"
+    "object",  # "object to processing"
+    "check", "checks", "checking",
+    "relate", "related", "relates",
+    "enable", "enables", "enabling",
+    "create", "creates", "created", "creating",
+    "read", "reads", "reading",
+    "check", "checks", "checking",
+    "relate", "related", "relates",
+    "enable", "enables", "enabling",
+}
