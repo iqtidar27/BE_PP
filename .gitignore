@@ -6,3 +6,5 @@ src/NER_detection/saved_model/*
 a1_after.txt
 
 sample_dataset*/*
+
+*train_result*
