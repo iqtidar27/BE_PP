@@ -1,0 +1,3397 @@
+[
+  {
+    "id": "s0001",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "The Extension use Google Analytics to collect website traffic data that help us improve our service.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Google Analytics",
+        "action": "collect",
+        "data_object": "website traffic data",
+        "negated": false
+      }
+    ],
+    "notes": "third-party analytics collect"
+  },
+  {
+    "id": "s0002",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "When using the Extension, GitHub personal access tokens and/or GitHub OAuth tokens might be needed to access private repositories.",
+    "category": "data_mention",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "GitHub personal access tokens",
+        "negated": false
+      },
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "GitHub OAuth tokens",
+        "negated": false
+      }
+    ],
+    "notes": "token collection implied; entity weak"
+  },
+  {
+    "id": "s0003",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "These tokens are stored in the browser's storage area.",
+    "category": "store_local",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "tokens",
+        "negated": false
+      }
+    ],
+    "notes": "local storage of tokens"
+  },
+  {
+    "id": "s0004",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "On Safari, these tokens are stored in the browser's local storage.",
+    "category": "store_local",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "tokens",
+        "negated": false
+      }
+    ],
+    "notes": "local store tokens — keep gold; pipeline may still miss"
+  },
+  {
+    "id": "s0005",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "The Extension uses these tokens to authenticate the requests with GitHub.",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "use of tokens, not collect/share of personal data in CUS sense"
+  },
+  {
+    "id": "s0006",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "We don't transmit or store GitHub tokens on our servers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "GitHub tokens",
+        "negated": true
+      }
+    ],
+    "notes": "negated transmit/store"
+  },
+  {
+    "id": "s0007",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "You must take necessary safeguard to ensure your GitHub tokens are secure.",
+    "category": "sanity_advice",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "advice only"
+  },
+  {
+    "id": "s0008",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "And GitLab, Gitee, Gitea have same behavior.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "no CUS content"
+  },
+  {
+    "id": "s0009",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "We are committed to ensuring that your personal information is secure.",
+    "category": "sanity_security",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "commitment, no collect/share verb"
+  },
+  {
+    "id": "s0010",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "We maintain or use third parties to maintain physical, electronic and managerial procedures designed to safeguard the information we collect through the Site.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "information",
+        "negated": false
+      }
+    ],
+    "notes": "collect is embedded in relative clause"
+  },
+  {
+    "id": "s0011",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "However, no information can be absolutely secure, and we can't guarantee the security of any information that is the subject of this Privacy Policy or any information that is submitted to us via the Internet.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "disclaimer"
+  },
+  {
+    "id": "s0012",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "Third parties may operate or host the Site or the computers that operate the Site, store or process data for us, and provide services related to the information requests that you have submitted or communications we provide to you.",
+    "category": "share_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Third parties",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "process/store data"
+  },
+  {
+    "id": "s0013",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "We do not sell personally identifiable information collected via the Site to third party marketers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "personally identifiable information",
+        "negated": true
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0014",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Your bookmarks are stored privately and never sold.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "bookmarks",
+        "negated": true
+      }
+    ],
+    "notes": "never sold"
+  },
+  {
+    "id": "s0015",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Speed Dial 2 is GDPR compliant and CCPA ready, and has been trusted by more than a million users since 2011.",
+    "category": "sanity_compliance",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "compliance claim only"
+  },
+  {
+    "id": "s0016",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "With a Speed Dial 2 Pro account, your bookmarks, groups, and settings sync automatically across all your devices, and even between different browsers, so your speed dial looks the same in Chrome and Firefox.",
+    "category": "share_sync",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "bookmarks",
+        "negated": false
+      },
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "settings",
+        "negated": false
+      },
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "groups",
+        "negated": false
+      }
+    ],
+    "notes": "sync ≈ share; keep soft gold"
+  },
+  {
+    "id": "s0017",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Speed Dial 2 is designed to be a secure and private place for your bookmarks.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "marketing privacy claim"
+  },
+  {
+    "id": "s0018",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Speed Dial 2 is a free new tab page extension for Google Chrome, Microsoft Edge, and Mozilla Firefox.",
+    "category": "sanity_product",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "product description"
+  },
+  {
+    "id": "s0019",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Yes. Speed Dial 2 is free to install and use, with unlimited bookmarks and groups.",
+    "category": "sanity_product",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "product copy; bookmarks mention is not CUS collect — gold empty correct; pred was false positive"
+  },
+  {
+    "id": "s0020",
+    "source": "speed-dial-2",
+    "language": "en",
+    "sentence": "Speed Dial 2 Pro is an optional upgrade that adds cross-device sync, automatic cloud backups, custom thumbnails, and more.",
+    "category": "share_sync",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "implied sync/backup only — emptied optimistic share gold"
+  },
+  {
+    "id": "s0021",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The Browsing Protection by F-Secure is an extension for protecting encrypted browsing with security products by F-Secure.",
+    "category": "sanity_product",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0022",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "we collect anonymous security data to protect you and your device;",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "we",
+        "action": "collect",
+        "data_object": "anonymous security data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0023",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "we collect non-personalized technical user data; and",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "we",
+        "action": "collect",
+        "data_object": "non-personalized technical user data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0024",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "the focus of data collection is not on you, but on your device and our service.",
+    "category": "sanity_purpose",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "purpose statement"
+  },
+  {
+    "id": "s0025",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The add-on automatically collects the following data about you, your device, and the service:",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The add-on",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "list header with collect verb"
+  },
+  {
+    "id": "s0026",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "the reason why a webpage is blocked, for example if it is harmful or suspicious;",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0027",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "license information;",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0028",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "operating system, its version, and unique identifiers;",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0029",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "device language, location, and model;",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0030",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "URL of the blocked webpage",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0031",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "This data is used to maintain, develop, and enhance the services and your customer experience and do troubleshooting and performance measurement;",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "purpose of use, not collect/share"
+  },
+  {
+    "id": "s0032",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The service sends queries on potential malicious activities or protected devices and networks to F-Secure Security Cloud.",
+    "category": "share_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The service",
+        "action": "share",
+        "data_object": "queries on potential malicious activities",
+        "negated": false
+      }
+    ],
+    "notes": "share to F-Secure Security Cloud"
+  },
+  {
+    "id": "s0033",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "F-Secure Security Cloud is a cloud-based system for cyber threat analysis that is operated by F-Secure.",
+    "category": "sanity_entity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "definition"
+  },
+  {
+    "id": "s0034",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "While we limit the processing of any information that could be considered sensitive by our users, we collect the minimum amount of user and organization information for the purpose of providing high quality protection to our users.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "we",
+        "action": "collect",
+        "data_object": "user and organization information",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0035",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Files that are blocked by F-Secure for a security reason, and related metadata.",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0036",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The metadata includes for example file hash, file name and file path.",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0037",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "We need to analyze files and emails for malicious content and behaviors for your protection.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "files",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "emails",
+        "negated": false
+      }
+    ],
+    "notes": "analyze may map to collect"
+  },
+  {
+    "id": "s0038",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Files are processed in a safe environment to catch harmful behaviors.",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "processing purpose without clear actor CUS; optional empty"
+  },
+  {
+    "id": "s0039",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Collection of this data helps F-Secure to keep a global threat situation map that allows reacting quickly to new threats.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "F-Secure",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "nominalization Collection of"
+  },
+  {
+    "id": "s0040",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Web addresses that you have tried to visit but have been blocked by F-Secure for a security reason or which exhibit potentially malicious behavior, and related metadata.",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0041",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The metadata includes for example response headers.",
+    "category": "data_list_no_verb",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "list/context fragment without local SOC verb — gold emptied (document-level collect)"
+  },
+  {
+    "id": "s0042",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The collected information also allows protection against phishing and ransomware attacks.",
+    "category": "sanity_purpose",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0043",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "F-Secure processes your data so that we can provide you with our services that you have made a contract for or are in the process of doing so.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "F-Secure",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0044",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "We need to automatically collect and process relevant data for our services to work, to enhance them, and to provide them to you.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "relevant data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0045",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "If you have subscribed to the service via our partner, such as a teleoperator, that partner may undertake some of the activities listed above in our stead (such as user authentication or communications).",
+    "category": "share_partner",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "no explicit data object — emptied"
+  },
+  {
+    "id": "s0046",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "We also exchange with the partner such above listed data (e.g. status of your subscription, installation success, service in active use, data collected for resolving a technical support case) as is necessary and proportional.",
+    "category": "share_partner",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "status of your subscription",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "data collected for resolving a technical support case",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "installation success",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "service in active use",
+        "negated": false
+      },
+      
+    ],
+    "notes": "exchange ≈ share"
+  },
+  {
+    "id": "s0047",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Personally identifiable user data is retained for the duration of an active service subscription plus for the grace period of six months thereafter.",
+    "category": "retention",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "retention only"
+  },
+  {
+    "id": "s0048",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "User data collected with the user's consent is retained for statistical purposes and is not deleted on removal of personal data and the user account.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "User data",
+        "negated": false
+      }
+    ],
+    "notes": "collected with consent"
+  },
+  {
+    "id": "s0049",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "After termination of the account, user data cannot be linked to any personally identifiable user.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "anonymization note"
+  },
+  {
+    "id": "s0050",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "You have the right to ask us what personal data we have on you and to get a copy of the data that we can identify pertaining to you in this context.",
+    "category": "rights",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "rights language — not a collect/share practice claim"
+  },
+  {
+    "id": "s0051",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "You also have the right to request us to cease storing your personal data and erase it.",
+    "category": "rights",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "rights language"
+  },
+  {
+    "id": "s0052",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "In cases where the processing is based on your consent, you have the right to withdraw your consent at any time via relevant settings.",
+    "category": "rights",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0053",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "JobLog only collects the data necessary for its operation.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0054",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "JobLog collects your email address and name via Google OAuth or magic link.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "email address",
+        "negated": false
+      },
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "name",
+        "negated": false
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0055",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "JobLog collects job applications and job offers that you enter.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "job applications",
+        "negated": false
+      },
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "job offers",
+        "negated": false
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0056",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "JobLog extracts the text content of your CVs on the client side; the PDF file is not stored.",
+    "category": "collect_and_not_store",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "text content of your CVs",
+        "negated": false
+      },
+      {
+        "entity": "JobLog",
+        "action": "not_collect",
+        "data_object": "PDF file",
+        "negated": true
+      }
+    ],
+    "notes": "paraphrase; PDF not stored"
+  },
+  {
+    "id": "s0057",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "JobLog collects your notification preferences.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "JobLog",
+        "action": "collect",
+        "data_object": "notification preferences",
+        "negated": false
+      }
+    ],
+    "notes": "paraphrase; preferences often NER-miss"
+  },
+  {
+    "id": "s0058",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "Your CV text is transmitted to Google via the Gemini API for each analysis.",
+    "category": "share_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "CV text",
+        "negated": false
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0059",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "The data collected by the extension is used only to provide and improve JobLog features.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "the extension",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0060",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "The data is not sold, is not transferred for advertising purposes, and is not used for personalized advertising.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0061",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "Data is stored in a MongoDB Atlas database hosted in Europe.",
+    "category": "store_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0062",
+    "source": "joblog",
+    "language": "en",
+    "sentence": "Sessions are managed by Better Auth.",
+    "category": "third_party_mention",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "paraphrase; no CUS verb"
+  },
+  {
+    "id": "s0063",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "This extension works locally and does not collect personal data.",
+    "category": "not_collect",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "This extension",
+        "action": "not_collect",
+        "data_object": "personal data",
+        "negated": true
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0064",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "The extension does not collect, store, or share any personal data of users.",
+    "category": "not_collect_not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "not_collect",
+        "data_object": "personal data",
+        "negated": true
+      },
+      {
+        "entity": "The extension",
+        "action": "not_share",
+        "data_object": "personal data",
+        "negated": true
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0065",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "Entered text may be saved locally in the browser (localStorage) only to improve the extension.",
+    "category": "store_local",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Entered text",
+        "negated": false
+      }
+    ],
+    "notes": "paraphrase"
+  },
+  {
+    "id": "s0066",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "This data remains on your device and is not sent anywhere.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0067",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "The extension works locally and does not communicate with any external servers.",
+    "category": "not_share",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "no explicit data object — emptied optimistic gold"
+  },
+  {
+    "id": "s0068",
+    "source": "generator-czcionek",
+    "language": "en",
+    "sentence": "The extension does not require special permissions or access to user data.",
+    "category": "sanity_permissions",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "not_collect",
+        "data_object": "user data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed: not require access ≈ not_collect"
+  },
+  {
+    "id": "s0069",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect your email address when you create an account.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "email address",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0070",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect IP address and browser type for security purposes.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "IP address",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "browser type",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0071",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Google Analytics collects anonymized usage data from our extension.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Google Analytics",
+        "action": "collect",
+        "data_object": "usage data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0072",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share crash reports with Sentry to improve stability.",
+    "category": "share_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "crash reports",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0073",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Stripe processes your payment information on our behalf.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Stripe",
+        "action": "collect",
+        "data_object": "payment information",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0074",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not sell your personal information to third parties.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "personal information",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0075",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not share browsing history with advertisers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "browsing history",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0076",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension does not transmit any personal data to external servers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "not_share",
+        "data_object": "personal data",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0077",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "No personal information is collected through this service.",
+    "category": "not_collect",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_collect",
+        "data_object": "personal information",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0078",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your email address will not be sold to third parties.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "email address",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0079",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "PostHog collects event data from the application.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "PostHog",
+        "action": "collect",
+        "data_object": "event data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0080",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Mixpanel and Amplitude analyze product usage data.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Mixpanel",
+        "action": "collect",
+        "data_object": "product usage data",
+        "negated": false
+      },
+      {
+        "entity": "Amplitude",
+        "action": "collect",
+        "data_object": "product usage data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0081",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "OpenAI processes the prompts you submit to the AI features.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "OpenAI",
+        "action": "collect",
+        "data_object": "prompts",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0082",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We may disclose your information to law enforcement if required by law.",
+    "category": "share_legal",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "information",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0083",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect and share device identifiers with advertising partners.",
+    "category": "collect_and_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "device identifiers",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "device identifiers",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0084",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The company may share your name, phone number, and device identifiers with third parties.",
+    "category": "share_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The company",
+        "action": "share",
+        "data_object": "name",
+        "negated": false
+      },
+      {
+        "entity": "The company",
+        "action": "share",
+        "data_object": "phone number",
+        "negated": false
+      },
+      {
+        "entity": "The company",
+        "action": "share",
+        "data_object": "device identifiers",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0085",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Firebase Crashlytics receives crash logs from the extension.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Firebase Crashlytics",
+        "action": "collect",
+        "data_object": "crash logs",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0086",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We use cookies to store preferences and settings.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "cookies",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "preferences",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "settings",
+        "negated": false
+      }
+    ],
+    "notes": "known NER stress"
+  },
+  {
+    "id": "s0087",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Cloudflare processes connection logs to protect against attacks.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Cloudflare",
+        "action": "collect",
+        "data_object": "connection logs",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0088",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect personal information when you create an account.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "personal information",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0089",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Anthropic may receive conversation data when you use the AI features.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Anthropic",
+        "action": "collect",
+        "data_object": "conversation data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0090",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The service provider may access your account information.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The service provider",
+        "action": "collect",
+        "data_object": "account information",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0091",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "HubSpot collects email addresses from signup forms.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "HubSpot",
+        "action": "collect",
+        "data_object": "email addresses",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0092",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We sell or share email addresses with partners.",
+    "category": "share_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "email addresses",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0093",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not sell or share your personal information with advertisers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "personal information",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0094",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The app does not send any personal data to third parties.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The app",
+        "action": "not_share",
+        "data_object": "personal data",
+        "negated": true
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0095",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Sentry collects error reports including stack traces and device model.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Sentry",
+        "action": "collect",
+        "data_object": "error reports",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0096",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect browsing history only with your explicit consent.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "browsing history",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0097",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Payment data is processed by Lemon Squeezy and is not stored on our servers.",
+    "category": "collect_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Lemon Squeezy",
+        "action": "collect",
+        "data_object": "Payment data",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0098",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share customer information with Stripe for payment processing.",
+    "category": "share_third_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "customer information",
+        "negated": false
+      }
+    ],
+    "notes": ""
+  },
+  {
+    "id": "s0099",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We may collect diagnostic information to troubleshoot issues.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "diagnostic information",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: clear collect"
+  },
+  {
+    "id": "s0100",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Third parties may receive aggregated analytics data.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Third parties",
+        "action": "collect",
+        "data_object": "aggregated analytics data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: receive as collect-type"
+  },
+  {
+    "id": "s0101",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your device identifiers may be shared with advertising networks.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "device identifiers",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: passive share"
+  },
+  {
+    "id": "s0102",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect cookies and similar tracking technologies.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "cookies",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0103",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension accesses your bookmarks stored in the browser.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "collect",
+        "data_object": "bookmarks",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: access as collect"
+  },
+  {
+    "id": "s0104",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not collect precise geolocation data.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_collect",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": "auto-gold approximate; refine manually if used for strict P/R"
+  },
+  {
+    "id": "s0105",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Camera and microphone access is never requested by this extension.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "this extension",
+        "action": "not_collect",
+        "data_object": "Camera and microphone access",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed: never requested ≈ not_collect"
+  },
+  {
+    "id": "s0106",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We store account credentials in encrypted form on our servers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "account credentials",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: store as collect-type"
+  },
+  {
+    "id": "s0107",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Supabase Auth manages user authentication tokens.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Supabase Auth",
+        "action": "collect",
+        "data_object": "authentication tokens",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed soft"
+  },
+  {
+    "id": "s0108",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We transmit form submissions to our backend API.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "form submissions",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0109",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Crashlytics is used to collect crash reports.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Crashlytics",
+        "action": "collect",
+        "data_object": "crash reports",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0110",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We will not disclose your information except as required by law.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "information",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed (except legal - still primarily not_share)"
+  },
+  {
+    "id": "s0111",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Personal data is deleted within 30 days of account closure.",
+    "category": "synthetic_extra",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "retention/deletion not CUS collect/share"
+  },
+  {
+    "id": "s0112",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect the pages you visit only while the extension is active.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "pages you visit",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0113",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Microsoft Clarity records anonymized session replays.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Microsoft Clarity",
+        "action": "collect",
+        "data_object": "session replays",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0114",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share limited account data with our support tools.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "account data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0115",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "No browsing content is uploaded to our servers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "browsing content",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed: not uploaded ≈ not_share"
+  },
+  {
+    "id": "s0116",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect your name and email when you contact support.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "name",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "email",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0117",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension reads page URLs to provide contextual features.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "collect",
+        "data_object": "page URLs",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: reads as collect; ignore provide as secondary"
+  },
+  {
+    "id": "s0118",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not sell or rent your personal information.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "personal information",
+        "negated": true
+      }
+    ],
+    "notes": "auto-gold approximate; refine manually if used for strict P/R"
+  },
+  {
+    "id": "s0119",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Analytics data is processed by Vercel Analytics.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Vercel Analytics",
+        "action": "collect",
+        "data_object": "Analytics data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0120",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect approximate location derived from IP address.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "approximate location",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "IP address",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0121",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "User-generated content you save is stored in our cloud database.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "User-generated content",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0122",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We may share data with affiliates under the same privacy policy.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0123",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Fingerprint or canvas data is not collected.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_collect",
+        "data_object": "Fingerprint or canvas data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0124",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We use PostHog to understand feature adoption.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "PostHog",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed soft: PostHog as analytics processor"
+  },
+  {
+    "id": "s0125",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your password is never stored in plain text.",
+    "category": "synthetic_extra",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "not a CUS collect/share claim about third parties"
+  },
+  {
+    "id": "s0126",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect log files including IP address, browser type, and timestamps.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "log files",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "IP address",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "browser type",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "timestamps",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0127",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Third-party ad partners may set cookies on your device.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Third-party ad partners",
+        "action": "collect",
+        "data_object": "cookies",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: set cookies ≈ collect cookies"
+  },
+  {
+    "id": "s0128",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not track you across other websites.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_collect",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed: not track"
+  },
+  {
+    "id": "s0129",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Extension preferences are stored locally using chrome.storage.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Extension preferences",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0130",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect feedback you submit through the in-app form.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "feedback",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0131",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "OpenAI API receives only the text you explicitly send for rewriting.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "OpenAI",
+        "action": "collect",
+        "data_object": "text",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0132",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share necessary data with Cloudflare for CDN and security.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0133",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "No personal data is transferred outside the European Economic Area without safeguards.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "personal data",
+        "negated": false
+      }
+    ],
+    "notes": "conditional transfer; soft gold share"
+  },
+  {
+    "id": "s0134",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect subscription status and billing plan information.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "subscription status",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "billing plan information",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0135",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Razorpay processes payments and receives card details.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Razorpay",
+        "action": "collect",
+        "data_object": "card details",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0136",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not access the content of your emails.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_collect",
+        "data_object": "content of your emails",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0137",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Device model and OS version are collected for compatibility analytics.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Device model",
+        "negated": false
+      },
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "OS version",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0138",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We may share anonymized statistics publicly.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "anonymized statistics",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0139",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension does not collect form inputs on third-party websites.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "not_collect",
+        "data_object": "form inputs",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0140",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We store chat history you create inside the product.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "chat history",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0141",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Google Tag Manager may load additional tracking scripts.",
+    "category": "synthetic_extra",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "gold fixed: no clear personal-data CUS; leave empty"
+  },
+  {
+    "id": "s0142",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect referral source and campaign parameters.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "referral source",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "campaign parameters",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0143",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your profile photo is uploaded to our CDN when you set one.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "profile photo",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed: uploaded ≈ share/collect"
+  },
+  {
+    "id": "s0144",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not sell data to data brokers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0145",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Mixpanel tracks button clicks and feature usage events.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Mixpanel",
+        "action": "collect",
+        "data_object": "button clicks",
+        "negated": false
+      },
+      {
+        "entity": "Mixpanel",
+        "action": "collect",
+        "data_object": "feature usage events",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0146",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect language preference from the browser.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "language preference",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0147",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Support tickets and related attachments are stored in our helpdesk system.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Support tickets",
+        "negated": false
+      },
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "attachments",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0148",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We transmit usage metrics to our internal analytics service.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "usage metrics",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0149",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "This product helps you stay organized and productive.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0150",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Download the extension from the Chrome Web Store.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0151",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "We are based in Helsinki, Finland.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0152",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Please contact support if you have questions.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0153",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "The interface supports dark mode and custom themes.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0154",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Version 2.1 was released in March 2026.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0155",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Trusted by professionals around the world.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0156",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Open a new tab and you're set.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0157",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "You can reorder groups from the new tab page.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0158",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "This policy was last updated on March 1, 2022.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0159",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Customer ratings are shown on the product page.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0160",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Learn more about our mobile app for iOS and Android.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0161",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "The documentation is available online.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0162",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Thank you for using our extension.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0163",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "All trademarks belong to their respective owners.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0164",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Security products by F-Secure require this browser extension to be able to protect your web browsing, online banking and shopping, and to show you security information while you are browsing the internet.",
+    "category": "sanity_product",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0165",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Please read our service-specific Privacy Policy for full details about what data we collect and how we use it in the installed F-Secure security product.",
+    "category": "collect_first_party",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "we",
+        "action": "collect",
+        "data_object": "data",
+        "negated": false
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0166",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "With the Security Cloud, F-Secure can maintain an up-to-date overview of the global threat landscape and protect our customers against new threats the moment they are first found.",
+    "category": "sanity_purpose",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0167",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "A site may get blocked based on selected protection preferences and parental control reasons.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0168",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Such contracts may be made either directly with F-Secure or with another entity (such as our webstore or operator partner) that has tendered our services to you.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0169",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The data is processed to provide F-Secure services to secure our customers' networks and devices as well as the confidentiality and availability of the data therein;",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "purpose list"
+  },
+  {
+    "id": "s0170",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "enable F-Secure to detect emerging threats and security-relevant trends among all of its customers, so that our services can keep on par with evolving threats;",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0171",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "The data processing by the services is mandatory for the efficient protection of the device/network and a prerequisite for F-Secure's capability to provide its contracted services.",
+    "category": "sanity_legal",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0172",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "For consumer products, this right takes place in the form of contract performance.",
+    "category": "sanity_legal",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0173",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "For corporate products, this right takes place in the form of legitimate interest.",
+    "category": "sanity_legal",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0174",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "Thereafter, the customer account will be scheduled for removal.",
+    "category": "sanity",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0175",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "F-Secure always applies strict security measures to protect the confidentiality and integrity of your personal data.",
+    "category": "sanity_security",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0176",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "You are entitled to object to certain processing of personal data, including for example the processing of your personal data for marketing purposes or when we otherwise base our processing of your data on a legitimate interest.",
+    "category": "rights",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0177",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "You also have the right to ask for personal data that you yourself have provided – pursuant to a contract or your consent.",
+    "category": "rights",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0178",
+    "source": "f-secure-browsing-protection",
+    "language": "en",
+    "sentence": "If you have any complaints about how we process your personal data, or would like further information, please contact us at any time.",
+    "category": "sanity_contact",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": ""
+  },
+  {
+    "id": "s0179",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "The Extension uses these tokens to authenticate the requests with GitHub (https://github.com).",
+    "category": "use",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "already similar"
+  },
+  {
+    "id": "s0180",
+    "source": "git-master",
+    "language": "en",
+    "sentence": "We don't transmit or store GitHub tokens on our servers.",
+    "category": "not_share",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "GitHub tokens",
+        "negated": true
+      }
+    ],
+    "notes": true
+  },
+  {
+    "id": "s0181",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect search queries you enter in the extension search box.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "search queries",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0182",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Twilio processes phone numbers for SMS verification.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Twilio",
+        "action": "collect",
+        "data_object": "phone numbers",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0183",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share account email with Intercom for customer support.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "account email",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0184",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension does not read the content of web pages you visit.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "not_collect",
+        "data_object": "content of web pages",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0185",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect performance metrics such as page load times.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "performance metrics",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0186",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your API keys are stored only in local browser storage.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "API keys",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0187",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not transmit API keys to our servers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "API keys",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0188",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Segment tracks analytics events on our marketing site.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Segment",
+        "action": "collect",
+        "data_object": "analytics events",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0189",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We may collect survey responses if you participate in research.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "survey responses",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0190",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Browsing history is never uploaded to our servers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "not_share",
+        "data_object": "Browsing history",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0191",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect the extension version and browser version for diagnostics.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "extension version",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "browser version",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0192",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "PayPal processes your payment details when you upgrade to Pro.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "PayPal",
+        "action": "collect",
+        "data_object": "payment details",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0193",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share limited diagnostic logs with our hosting provider.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "diagnostic logs",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0194",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The company collects contact information from the support form.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The company",
+        "action": "collect",
+        "data_object": "contact information",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0195",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not collect data from pages on other websites.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_collect",
+        "data_object": "data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0196",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Notion may receive workspace metadata if you connect the integration.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Notion",
+        "action": "collect",
+        "data_object": "workspace metadata",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0197",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect and use cookies to remember your settings.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "cookies",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "settings",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0198",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "User behavior data is analyzed to improve the product.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "User behavior data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0199",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We will not share your resume content with third parties.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "resume content",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0200",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Google Cloud stores encrypted backups of your account data.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "Google Cloud",
+        "action": "collect",
+        "data_object": "account data",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0201",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The extension collects tab titles to build your session history.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The extension",
+        "action": "collect",
+        "data_object": "tab titles",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0202",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We do not sell personal information under any circumstances.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "not_share",
+        "data_object": "personal information",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0203",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "AppsFlyer attributes installs using advertising identifiers.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "AppsFlyer",
+        "action": "collect",
+        "data_object": "advertising identifiers",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0204",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect screen resolution and viewport size for layout testing.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "screen resolution",
+        "negated": false
+      },
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "viewport size",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0205",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Personal notes you write stay on your device unless sync is enabled.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "Personal notes",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed soft local store"
+  },
+  {
+    "id": "s0206",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "When sync is enabled, notes are transmitted to our cloud service.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "share",
+        "data_object": "notes",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0207",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We collect error messages displayed by the extension.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "collect",
+        "data_object": "error messages",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0208",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "The service does not collect biometric data.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "The service",
+        "action": "not_collect",
+        "data_object": "biometric data",
+        "negated": true
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0209",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "We share abuse reports with relevant security partners.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "We",
+        "action": "share",
+        "data_object": "abuse reports",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0210",
+    "source": "synthetic-extension-policy",
+    "language": "en",
+    "sentence": "Your organization name is collected when you start a team plan.",
+    "category": "synthetic_extra",
+    "has_cus_signal": true,
+    "gold_tuples": [
+      {
+        "entity": "unspecified",
+        "action": "collect",
+        "data_object": "organization name",
+        "negated": false
+      }
+    ],
+    "notes": "gold fixed"
+  },
+  {
+    "id": "s0211",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Click the download button to install the extension.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0212",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Our team is available Monday through Friday.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0213",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "The logo is a registered trademark.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0214",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "This page is available in multiple languages.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0215",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Watch the product video for a quick overview.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0216",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Pricing depends on the plan you choose.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0217",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Join our community forum to share tips.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0218",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "We updated the user interface in the latest release.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0219",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "Keyboard shortcuts can be customized in settings.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  },
+  {
+    "id": "s0220",
+    "source": "sanity-negatives",
+    "language": "en",
+    "sentence": "The FAQ answers common installation questions.",
+    "category": "negative",
+    "has_cus_signal": false,
+    "gold_tuples": [],
+    "notes": "expected: no CUS tuples"
+  }
+]

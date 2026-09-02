@@ -11,8 +11,8 @@ from collections import Counter
 from typing import List, Tuple
 
 # ====================== CONFIG ======================
-INPUT  = Path("BIO_NER_original_labeled.jsonl")
-OUTPUT = Path("bio_augmented_rare50_balanced_v2.jsonl")
+INPUT  = Path("bio_from_labelstudio_dataobj_5559+359.jsonl")
+OUTPUT = Path("bio_augmented_rare50_balanced_v6.jsonl")
 
 SEED = 42
 

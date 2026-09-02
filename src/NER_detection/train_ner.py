@@ -21,7 +21,8 @@ from transformers import (
 from seqeval.metrics import precision_score, recall_score, f1_score
 
 # ====================== CONFIG ======================
-DATA = Path("NER_dataset/BIO_augmented_rare50_balanced_v2.jsonl")
+Dataset_version = 'v6_augmented_final'
+DATA = Path("NER_dataset/bio_augmented_rare50_balanced_v6.jsonl")
 MODEL_NAME = "mukund/privbert"
 
 MAX_LENGTH = 256                 # sweet spot for 4070 12GB
@@ -50,7 +51,7 @@ id2label = {i: l for l, i in label2id.items()}
 
 OUT = Path(
     f"saved_model/dataobj_ner_v5_focal{FOCAL_GAMMA}"
-    f"_len{MAX_LENGTH}_unf{NUM_UNFROZEN_LAYERS}"
+    f"_len{MAX_LENGTH}_unf{NUM_UNFROZEN_LAYERS}_dataset_version_{Dataset_version}"
 )
 print(f"Output directory: {OUT}")
 
