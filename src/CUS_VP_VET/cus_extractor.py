@@ -155,8 +155,13 @@ def classify_party(entity, extension_name=None):
     if not e or e in {"unspecified", "unknown"}:
         return "unspecified"
     aliases = {a.lower() for a in first_party_aliases(extension_name)}
-    if extension_name and e == " ".join(str(extension_name).lower().split()):
-        return "first_party"
+    if extension_name:
+        n = " ".join(str(extension_name).lower().split())
+        first = n.split()[0] if n else ""
+        if e == n or (first and e == first):
+            return "first_party"
+        if e and n and (n.startswith(e + " ") or e.replace(" ", "") == n.replace(" ", "")):
+            return "first_party"
     if e in _FIRST_PARTY_LABELS or e in aliases or e in _EXTRA_FIRST_PARTY:
         return "first_party"
     if e.endswith(" servers") and e.split()[0] in {"our", "my", "the"}:
